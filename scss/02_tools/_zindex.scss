@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #Z-INDEXES
+\*------------------------------------*/
+
+/*
+All z-indexes should be declared here first
+ */
+
+$zindex: (
+    z-killer                    :99999,
+    default-popup               :13000,
+    profile-header-small        :12500,
+    buy-modal                   :12000,
+    scroll-top                  :10000,
+    modal                       : 9000,
+    button-badge                : 7500,
+    overlay                     : 8000,
+    network-notifier            : 7000,
+    header-main                 : 6000,
+    profile-preview-mode-switch : 5500,
+    footer                      : 5000,
+    network-logo                : 4000,
+    edit-profile-nav-indicator  : 3000,
+    profile-checklist-box       : 100,
+    profile-checklist-box-image : 99,
+    premium                     : 10,
+    // profile-edit-button         : 5,
+);
+
+.header-main {
+    z-index: map-get($zindex, header-main);
+}
+@include mq($until:sph) {
+    .navigation, .navbar-toggle, .mobile-open-overlay, .header-logo-box {
+        z-index: map-get($zindex, header-main);
+    }
+}
+
+.navbar-brand, .navbar-collapse {
+    z-index: map-get($zindex, network-logo);
+}
+
+.edit-profile-nav-indicator, .feed {
+    z-index: map_get($zindex, edit-profile-nav-indicator);
+}
+
+.button-badge {
+    z-index: map_get($zindex, button-badges);
+}
+
+.network-notifier {
+    z-index: map_get($zindex, network-notifier);
+}
+
+.premium {
+    z-index: map_get($zindex, premium);
+}
+
+.scroll-top div {
+    z-index: map_get($zindex, scroll-top);
+}
+.fixed-button {
+    z-index: map_get($zindex, z-killer);
+}
+.modal {
+    z-index: map_get($zindex, buy-modal);
+}
+
+.popup-default {
+    z-index: map_get($zindex, default-popup);
+}
+
+// .profile-section-header-box .btn[data-position="right"] {
+//     z-index: map_get($zindex, profile-edit-button);
+// }
+
+.mode-switch {
+    z-index: map_get($zindex, profile-preview-mode-switch);
+}
+
+.user-banner.user-minified > .user-banner-top {
+    z-index:map_get($zindex, profile-header-small);
+}
+

@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------------------
+          Styles for the Add Address form
+ --------------------------------------------------------------------------*/
+
+.basket-contents {
+ ul.block-list {
+  padding: 0;
+  margin: 0 !important;
+ }
+ .choose-address {
+  margin-bottom: 2em;
+  ul {
+   list-style: none;
+   margin: 0;
+   padding: 0 0 0 2em;
+   li {
+    text-transform: uppercase;
+    input {
+     margin-right: 0.6em;
+    }
+   }
+  }
+ }
+ form.add-address {
+  label {
+   font-size: 0.8em;
+  }
+  .btn {
+   margin-top: 2em;
+   margin-left: 0;
+  }
+ }
+ .previewList {
+  margin-bottom: 3em;
+  hr {
+   margin-top: 0;
+  }
+ }
+}

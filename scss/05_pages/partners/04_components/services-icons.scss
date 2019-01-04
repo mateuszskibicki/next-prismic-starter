@@ -1,0 +1,51 @@
+// --------- SERVICES ICONS -------- //
+
+.kiwi-services {
+    &--icon {
+        margin-bottom: 2em;;
+        .services {
+            &--icon-list {
+            display: flex;
+            margin: 0;
+            @include mq($until: tb) {
+                flex-wrap: wrap;
+            }
+                &-item{
+                    position: relative;
+                    flex: 1;
+                    min-height: 200px;
+                    padding: 0 15px;
+                    @include mq($until: tb) {
+                        flex: 100%;
+                        margin-bottom:2.3em
+                    }
+                    .icon-list {
+                        &__image {
+                            flex: 1;
+                            margin: 0 auto;
+                            max-height: 120px;
+                            height: auto;
+                        }
+                    }
+                    .rich-text {
+                        padding-top: 1em;
+                        margin: 0 auto 5.3em auto;
+                        max-width: 225px;;
+                        // text-align: left;
+                        font-size: 0.9em;
+                        line-height: 1.1em;
+                    }
+                    .btn--cta-kiwi {
+                        position: absolute;
+                        bottom: 0;
+                        left: 15px;
+                        right: 15px;
+                        max-width: 225px;
+                        margin: 0 auto;
+
+                    }
+                }
+            }
+        }
+    }
+}

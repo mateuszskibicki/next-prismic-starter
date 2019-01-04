@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------------------
+          Specific styles for the Basket
+ --------------------------------------------------------------------------*/
+
+.basket-label-price {
+ text-align: right;
+}
+.basket-total-value {
+ text-align: right;
+ font-weight: 700;
+}
+.basket-buttons {
+ .btn {
+  margin-right: 0;
+ }
+}
+ .basket-label-icon, // TODO -- Is this used?
+ .basket-label-description,
+ .basket-label-price,
+ .basket-total-value,
+ .basket-item-icon,
+ .basket-item-description,
+ .basket-item-price,
+ .basket-total-label {
+  //border: 1px solid red;
+ }

@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------------------------------------
+                          Site wide gradients can be found here
+ --------------------------------------------------------------------------------------------*/
+
+
+$gradient-media-hub: 180deg,
+    rgba($white,0.0) 0%,
+    rgba($white,0.7) 25%,
+    rgba($white,1.0) 100%;
+
+$gradient-brand-color: linear-gradient(to right, $primary-color-1 0%, darken($primary-color-1,1%) 100%);
+
+$gradient-black: linear-gradient(to right, rgba($black,0.4) 0%, rgba(lighten($black,1%),0.4) 100%);
+
+$gradient-dark-brand: linear-gradient(45deg, darken($primary-color-1,20%) 0%, darken($primary-color-1,30%) 100%);
+
+$gradient-home-hero: linear-gradient(90deg, rgba($primary-color-1, 0.7) 25%, rgba($primary-color-2, 0.7) 100%);

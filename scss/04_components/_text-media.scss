@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------------------------------------
+                         Text and Media Section Styles
+ --------------------------------------------------------------------------------------------*/
+
+ .text-media {
+     margin: 3em;
+     @include mq($until: sph) {
+         margin: 2em 0 0;
+     }
+     .text-media {
+         &__text {
+             .title {
+                 color: $text-color;
+                 margin-top: 0;
+             }
+         }
+         &__media {
+            .media {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+            @include mq($until: sph) {
+                margin-top: 3em;
+            }
+         }
+     }
+ }

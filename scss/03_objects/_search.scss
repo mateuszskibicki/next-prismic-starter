@@ -1,0 +1,105 @@
+/*----------------------------------------------------------
+          Styles for all search components
+ -----------------------------------------------------------*/
+
+.role-search input {
+  border: 1px solid $grey-light;
+  border-radius: 0;
+  height: $baseline *1.5;
+  font-size: $base-font-size;
+  width: 100%;
+}
+
+label.search-checkbox {
+  padding: 16px;
+  margin-bottom: 0;
+  font-size: $base-font-size;
+  font-weight: 400;
+}
+
+.background-grey {
+  background: tint($grey-light, 70%);
+}
+
+.search-bar {
+  width: 100%;
+  overflow: hidden;
+  margin: 2em 0;
+  position: relative;
+  height: 38px;
+  input, button {
+    position: absolute;
+    top: 0;
+    height: 38px;
+    z-index: 5;
+  }
+  input {
+    color: $tertiary-color;
+    width: 100%;
+    width: calc(100% - 34px);
+    left: 0;
+    border: 1px solid $grey-light;
+    padding: 0.4em 0.6em;
+    @include border-radius(4px);
+    &:hover, &:focus {
+      background: rgba($white, 1);
+    }
+  }
+  .btn {
+    width: 38px;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    @include border-radius(0 4px 4px 0);
+    i {
+      line-height: 38px;
+      margin: 0 !important;
+      @include transition($fast-ease);
+    }
+    &:hover i {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+}
+
+
+.show-advanced-option {
+  i.fa {
+    margin-left: 0.5em;
+  }
+}
+
+ul.select-country {
+  list-style: none;
+  li {
+    input {
+      margin-right: 0.5em;
+    }
+  }
+  @include mq($until:sph) {
+    li {
+      margin: 1em;
+    }
+  }
+  @include mq($from:sph) {
+    li {
+      margin: 0 1em;
+      display: inline-block;
+    }
+  }
+  @include mq($from:tb) {
+    li {
+      label {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+

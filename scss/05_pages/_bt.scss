@@ -1,0 +1,103 @@
+//-----------------------------------------------------------------\\
+//          Styles specific to the Business Transformation Page
+//-----------------------------------------------------------------\\
+
+.bt-body {
+  .how-img {
+    background: url("/images/how-background.jpg") no-repeat;
+    background-size: cover;
+    overflow: auto;
+  }
+  .transparent-background {
+    background-color: rgba(245, 245, 245, .6);
+    p {
+      font-weight: 500;
+    }
+  }
+  .white-background {
+    background-color: $white;
+    height: 28px;
+    position: relative;
+    top: 40px;
+    left: 16px;
+    max-width: 89%;
+    @include mq($until: 400px) {
+      top: 48px;
+      left: 7px;
+      max-width: 95%;
+    }
+    @include mq($from: sph, $until: tb) {
+      max-width: 82%;
+    }
+    @include mq($from: tb, $until: dss) {
+      max-width: 67%;
+    }
+    @include mq($from: dss, $until:dsl) {
+      max-width: 59%;
+    }
+    @include mq($from: dsl) {
+      max-width: 63%;
+    }
+    .settings-title {
+      margin-bottom: 0;
+      position: relative;
+      top: 1px;
+      left: 42px;
+      @include mq($until: 400px) {
+        font-size: 100%;
+        max-width: 95%;
+        line-height: 1;
+        top: -21px;
+        left: 21px;
+      }
+      @include mq($from: 400px, $until: mb) {
+        top: -12px;
+        left: 11px;
+      }
+      @include mq($from: mb, $until: sph) {
+        top: 1px;
+        left: 12px;
+        font-size: 99%;
+      }
+      @include mq($from: sph, $until: tb) {
+        top: 1px;
+        left: 14px;
+      }
+      @include mq($from: tb, $until: dss) {
+        top: 0;
+        left: 31px;
+      }
+    }
+  }
+  .buy-cta {
+    @include mq($until: tb) {
+      text-align: center;
+    }
+    @include mq($from: tb) {
+      text-align: right;
+      padding-right: 48px;
+    }
+    h6 {
+      margin-bottom: 8px;
+    }
+  }
+  .preferences-border {
+    border: 4px solid $primary-color-1;
+    padding: $baseline;
+    .settings-dropdowns {
+      min-height: $baseline * 4;
+      @include mq($from: tb) {
+        min-height: $baseline * 5;
+      }
+      .error {
+        color: $alert-color;
+        font-weight: 500;
+      }
+    }
+  }
+  button.btn-pref {
+    @include mq($from: sph) {
+      float: right;
+    }
+  }
+}

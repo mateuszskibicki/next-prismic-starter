@@ -1,0 +1,48 @@
+// --------- MEDIA SECTION -------- //
+
+.kiwi-media {
+    padding: 3em 0;
+    margin-bottom: 2em;
+    .media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mq($until: tb) {
+            flex-wrap: wrap;
+        }
+        &__content {
+            flex: 55%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5em;
+            padding: 0 15px;
+            max-width: 60%;
+            @include mq($until: tb) {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            .kiwi-heading {
+                margin-bottom: 0.3em;
+                line-height: 1.1em;
+            }
+            &--description > p {
+                margin-bottom: 1.2em;
+            }
+        }
+        &__media {
+            flex: 1 0 45%;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+            max-width: 600px;
+            @include mq($until: tb) {
+                flex-basis: 100%;
+            }
+            img{
+            height: auto;
+            max-width: 600px;
+            }
+        }
+    }
+}

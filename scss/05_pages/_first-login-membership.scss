@@ -1,0 +1,548 @@
+/*--------------------------------------------------------------------------
+          Styles for Membership package on First Login Page
+ --------------------------------------------------------------------------*/
+
+.first-login-membership-page {
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Open Sans', Helevetica, Sans-Serif;
+  }
+  .page-header-custom {
+    text-align: center;
+    margin-bottom: 4em;
+    .top-bar {
+      background: $primary-color-1;
+        color: $white;
+      padding: 1em;
+      margin-bottom: 2em;
+    }
+    h4.page-sub_header {
+      color: $primary-color-1;
+      margin-bottom: 1em;
+    }
+    @include mq($until: sph) {
+      .logo-dot {
+        width: 3em;
+      }
+    }
+    @include mq($from: sph, $until: tb) {
+      .logo-dot {
+        width: 4em;
+      }
+    }
+    @include mq($from: tb) {
+      .logo-dot {
+        width: 4em;
+      }
+    }
+  }
+  .banner-membership-package {
+    background: darken($grey-light,5%) $pattern-floral center repeat;
+    background-size: auto;
+    padding: 3em 0;
+    margin: 3em 0 4em;
+    .overlay-top {
+      margin-top: -5em;
+      margin-bottom: 2em;
+    }
+    @include mq($from: sph) {
+      .package-box, .package-button {
+        font-size: 1.6rem;
+      }
+    }
+    @include mq($from: sph) {
+      .package-box, .package-button {
+        font-size: 2rem;
+      }
+    }
+    @include mq($from: tb) {
+      .package-box {
+        min-height: 460px;
+      }
+    }
+    h5 {
+      padding: 0 2em;
+    }
+    ul.membership-benefits {
+      span.icon-benefits img {
+        background: $primary-color-1;
+        border: 2px solid $white;
+      }
+      li {
+        margin-bottom: 0.5em;
+        span.label-benefits {
+          padding-top: 0.5em;
+        }
+      }
+    }
+  }
+  .banner-membership-picture {
+    background-attachment: fixed;
+    margin-top: 6em;
+    @include bg-blend($gradient-brand-color,
+        $bg-consultation,
+        multiply,
+        center,
+        no-repeat,
+        cover,
+        $primary-color-1,
+        0.5);
+  }
+  .speech-bubble {
+    background: $primary-color-1;
+    * {
+      color: $white;
+    }
+    &:after {
+      @include mq($until: sph) {
+          border-top: 32px solid $primary-color-1;
+          border-left: 32px solid transparent;
+      }
+      @include mq($from: sph,
+      $until: tb) {
+          border-left: 32px solid $primary-color-1;
+          border-top: 32px solid transparent;
+      }
+      @include mq($from: tb) {
+          border-left: 32px solid $primary-color-1;
+          border-top: 32px solid transparent;
+      }
+    }
+  }
+  .review-section, .floating-box {
+    .package-box, .package-button {
+      font-size: 1.6rem;
+    }
+  }
+  .review-section {
+    position: relative;
+    .overlay-top {
+      margin-top: -4em;
+      margin-bottom: 4em;
+    }
+  }
+  .banner-membership-picture {
+    .package-box, .package-button {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .floating-box {
+    @include mq($until: tb) {
+      @include transition($fast-ease);
+    }
+    @include mq($until: sph) {
+      display: none;
+    }
+    @include mq($from: sph) {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      .floating-top, .floating-bottom {
+        position: absolute;
+        width: 100%;
+      }
+      .floating-top {
+        bottom: 0;
+      }
+      .floating-bottom {
+        top: 100%;
+      }
+    }
+    &.fix-floating-box {
+      position: fixed;
+      transform: translateY(-50%);
+      bottom: 50%;
+    }
+  }
+
+
+  .speech-bubble {
+    padding: 2em;
+    position: relative;
+    .review-text {
+      font-weight: 600;
+      line-height: 1.6;
+    }
+    p.review-author {
+      font-size: 0.9em;
+      margin-bottom: 0;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      @include mq($until: sph) {
+        right: 32px;
+        bottom: -32px;
+      }
+      @include mq($from: sph, $until: tb) {
+        right: -32px;
+        bottom: 0;
+      }
+      @include mq($from: tb) {
+        right: -32px;
+        bottom: 0;
+      }
+    }
+  }
+  .aside {
+    p:last-child {
+      margin-bottom: 0;
+    }
+    @include mq($until:sph) {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+    @include mq($from:sph) {
+      .vertical-align {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    @include mq($from:sph, $until:tb) {
+      padding-bottom: 180%;
+    }
+    @include mq($from:tb, $until:dsxxl) {
+      padding-bottom: 120%;
+    }
+    @include mq($from:dsxxl) {
+      padding-bottom: 70%;
+    }
+  }
+  .cpd {
+    padding-bottom: 2em;
+    .logo-cpd {
+      width: 50%;
+      max-width: 200px;
+      margin: 4em 0 0;
+    }
+  }
+  .banner-bg-solid {
+    background: $primary-color-1;
+    p {
+        color: $white;
+    }
+}
+  .banner-bg-solid, .banner-package-bottom  {
+    padding: 4em 0;
+  }
+  .banner-package-bottom {
+    @include bg-blend($gradient-black,
+    $bg-meeting,
+    multiply,
+    center,
+    no-repeat,
+    cover,
+    $primary-color-1,
+    0.7);
+    p {
+        color: $white;
+    }
+    .frame-t4 {
+      font-size: 1.6rem;
+      padding: 1em;
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .fixed-button {
+    $toggle-height: 50px;
+    height: $toggle-height;
+
+    @include mq($until:sph) {
+      font-size: 0.7rem; // Base value determine properties like font-size, padding, height etc. that are dynamically changed in separate section.
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 500000;
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100px;
+        pointer-events: none;
+        @include background($gradient-mask-black-fine);
+        position: absolute;
+        bottom: 100%;
+      }
+      .btn {
+        height: $toggle-height;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        .price, .label, .icon {
+          font-size: 1.0rem;
+          height: $toggle-height !important;
+          line-height: 1;
+        }
+        .icon {
+          width: $toggle-height;
+        }
+        &[data-action="choose-plan"] {
+          z-index: 2;
+        }
+        &[data-action="go-to-payment"] {
+          z-index: 1;
+        }
+      }
+      .toggle-plan {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: $white;
+        height: $toggle-height;
+        @include transition($fast-ease);
+        .price-box, .toggle-box, .close {
+          float: left;
+          display: block;
+          height: $toggle-height;
+        }
+        .price-box {
+          background-color: $tertiary-color;
+          color: $white;
+          padding: 5px 6px;
+          text-align: center;
+          min-width: 106px;
+          span {
+            font-weight: 300;
+          }
+          .label {
+            text-transform: uppercase;
+          }
+          .price {
+            font-size: 1.6em;
+          }
+        }
+        .toggle-box {
+          padding: 0 10px;
+        }
+        .toggle {
+          position: relative;
+          top: 55%;
+          transform: translateY(-50%);
+          &__button {
+            margin: 0 0.2em;
+          }
+        }
+        .close {
+          width: $toggle-height;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    @include mq($from:sph) {
+      display: none;
+    }
+    &.show-toggle {
+      .toggle-plan {
+        bottom: 50px !important;
+      }
+      .btn[data-action="choose-plan"] {
+        pointer-events: none;
+        bottom: $toggle-height*(-1);
+      }
+    }
+  }
+
+  .padding-mod-small {
+    @include mq($until:sph) {
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+
+  //buttons - transition to new styles
+  .btn {
+    @include border-radius(0 !important);
+  }
+  .btn-price {
+    width: 100%;
+    padding: 0 !important;
+    border: none;
+    height: auto;
+    span {
+      display: block;
+      line-height: 1.6;
+      height: auto;
+      font-size: 1.2em;
+      min-height: auto;
+    }
+    span.price, span.label, span.icon {
+      padding: 1rem !important;
+    }
+    span.price {
+      float: left;
+    }
+    span.icon {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  // For price toggle
+  .price {
+    font-weight: 300;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    .price-option {
+      &--1, &--2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include transition($fast-ease);
+      }
+    }
+    &.option {
+      &--1 {
+        .price-option--2 {
+          top: 100px;
+        }
+      }
+      &--2 {
+        .price-option--1 {
+          top: 100px;
+        }
+      }
+    }
+  }
+
+  // TODO
+  .price, .vat {
+    line-height: 1;
+    display: table-cell;
+    vertical-align: bottom;
+  }
+  .vat {
+    padding-left: 0.2em;
+    padding-bottom: 0.1em;
+  }
+  .price-current {
+    overflow: hidden;
+    display: table;
+    .price {
+      margin-right: 0.2em;
+    }
+    .vat {
+    }
+  }
+
+  //Styles dynamically changing font sizes, paddings based on rem and em relations
+  // Styles dynamically changing font sizes, padding based on rem and em relations
+  .package-box {
+    @include mq($until: piad) {
+      padding: 1em;
+    }
+    @include mq($from: piad) {
+      padding: 1.5em;
+    }
+  }
+  .package-box, .fixed-button {
+    background: $grey-dark $pattern-floral center repeat;
+    background-size: auto;
+    .package-title,
+        .price,
+        .vat {
+            color: $text-color;
+        }
+        .price-old {
+          .price-info,
+          .price,
+          .vat {
+              color: darken($text-color, 35%);
+          }
+      }
+      .package-network {
+          color: $text-color;
+      }
+    .package-title {
+      font-weight: 600;
+      line-height: 1.2;
+      font-size: 0.8em;
+    }
+    .package-network {
+      font-size: 0.6em;
+      font-weight: 300;
+    }
+    hr.package {
+      margin: 1em 0;
+    }
+    .payment-plan {
+      margin-bottom: 1em;
+    }
+    .price-info {
+      text-transform: uppercase;
+      font-size: 0.5em;
+      letter-spacing: 0.2em;
+      margin-bottom: 0;
+    }
+
+    .price-current {
+      height: 2em; //
+      .price {
+        font-size: 2em;
+      }
+      .vat {
+        font-size: 1em;
+      }
+    }
+    .price-old {
+      margin-bottom: 0.6em;
+      .price-info {
+        font-size: 0.4em;
+      }
+      .price {
+        font-size: 1em;
+        margin-right: 0.2em;
+      }
+      .vat {
+        font-size: 0.5em;
+      }
+    }
+    @include mq($until: piad) {
+      .price {
+        font-size: 1.4em;
+        margin-right: 0.1em;
+        display: block;
+      }
+      .vat {
+        font-size: 0.7em;
+      }
+    }
+  }
+  .package-button {
+    background: $grey-light;
+    padding: 1.5em;
+    @include mq($until: piad) {
+      padding: 1em;
+    }
+    .btn-full {
+      height: auto;
+      padding: 1.2em 1.4em;
+      text-align: center;
+      span.label, span.icon {
+        font-size: 1.2rem;
+        display: inline-block;
+        float: none;
+      }
+    }
+  }
+  .fixed {
+    position: fixed !important;
+    top: 200px !important;
+    left: 0;
+    width: 100%;
+    bottom: auto !important;
+  }
+}

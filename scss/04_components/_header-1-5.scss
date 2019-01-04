@@ -1,0 +1,110 @@
+// -------- Header 1.5 -------- //
+
+
+$c-top-bar: $grey-cold-dark;
+$top-bar-height: 60px;
+$nav-padding: 10px;
+
+$c-sub-nav: lighten($grey-cold-dark,10%);
+
+.header-15 {
+@include mq($until: tb) {
+  display: none;
+}
+  .top-bar {
+
+    height: $top-bar-height;
+
+    display: grid;
+    grid-template-columns: 200px auto;
+
+    background-color: $white;
+    border-bottom: 0.5px solid $grey-light;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+    &__logo {
+
+      grid-column: 1 / span 1;
+
+      // padding: $nav-padding;
+
+    }
+
+    &__nav {
+
+      grid-column: 2 / span 1;
+
+    }
+
+    .logo--top-bar {
+
+      display: block;
+      max-width: 100%;
+      height: 100%;
+
+    }
+
+  }
+
+  .main-nav {
+
+    display: flex;
+    justify-content: flex-end;
+    padding: $nav-padding 0;
+
+
+    &__slot {
+
+      height: $top-bar-height - 2*$nav-padding;
+      padding: 0 $nav-padding;
+
+      border-right: 0.5px solid $grey-light;
+
+      &:last-child {
+        border: none;
+      }
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+
+        }
+      }
+
+      &--products {
+
+      }
+      &--user-features {
+        a:hover {
+          text-decoration: none;
+        }
+      }
+      &--account {
+
+      }
+
+    }
+
+  }
+
+  .user-sub-menu {
+    position: fixed;
+    top: $top-bar-height + 5px;
+    right: 0;
+    background-color: $primary-color-1-20;
+    z-index: 20;
+    &__category {
+      border-bottom: 1px solid $grey-light;
+      padding: 1em;
+      a {
+        color: $text-color;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+

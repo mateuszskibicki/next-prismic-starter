@@ -1,0 +1,331 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+//floats
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+// -----------------------------------------------------------------------------
+// My helper classes
+// -----------------------------------------------------------------------------
+
+.long-word {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5)
+}
+
+.overlay:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.border {
+  border: $border-primary;
+}
+
+.alpha {
+  margin-left: 0 !important;
+}
+
+.omega {
+  margin-right: 0 !important;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  width: 1%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/* ------
+Padding
+--------*/
+
+.padding-none {
+  padding: 0 !important;
+}
+
+.padding-top {
+  padding-top: $baseline !important;
+}
+
+.padding-half-top {
+  padding-top: $baseline / 2;
+}
+
+.padding-right {
+  padding-right: $baseline;
+}
+
+.padding-half-right {
+  padding-right: $baseline / 2;
+}
+
+.padding-bottom {
+  padding-bottom: $baseline;
+}
+
+.padding-half-bottom {
+  padding-bottom: $baseline / 2;
+}
+
+.padding-left {
+  padding-left: $baseline;
+}
+
+.padding-half-left {
+  padding-left: $baseline / 2;
+}
+
+.padding-x {
+  padding-left: $baseline;
+  padding-right: $baseline;
+}
+
+.padding-half-x {
+  padding-left: $baseline / 2;
+  padding-right: $baseline / 2;
+}
+
+.padding-y {
+  padding-top: $baseline;
+  padding-bottom: $baseline;
+}
+
+.padding-half-y {
+  padding-top: $baseline / 2;
+  padding-bottom: $baseline / 2;
+}
+
+.padding-xy {
+  padding: $baseline;
+}
+
+.padding-half-xy {
+  padding: $baseline / 2;
+}
+
+.section-padding {
+  padding: $baseline * 2;
+}
+
+.section-padding-y {
+  padding-top: $baseline * 2;
+  padding-bottom: $baseline * 2;
+}
+
+.section-padding-x {
+  padding-left: $baseline * 2;
+  padding-right: $baseline * 2;
+}
+
+
+/* ------
+Margins
+--------*/
+
+.margin-none {
+  margin: 0 !important;
+}
+
+.margin-top {
+  margin-top: $baseline;
+}
+
+.margin-half-top {
+  margin-top: $baseline / 2;
+}
+
+.margin-right {
+  margin-right: $baseline;
+}
+
+.margin-half-right {
+  margin-right: $baseline / 2;
+}
+
+.margin-bottom {
+  margin-bottom: $baseline !important;
+}
+
+.margin-bottom-3 {
+  margin-bottom: $baseline * 3;
+}
+
+.margin-half-bottom {
+  margin-bottom: $baseline / 2;
+}
+
+.margin-left {
+  margin-left: $baseline;
+}
+
+.margin-half-left {
+  margin-left: $baseline / 2;
+}
+
+.margin-x {
+  margin-left: $baseline;
+  margin-right: $baseline;
+}
+
+.margin-y {
+  margin-top: $baseline;
+  margin-bottom: $baseline;
+}
+
+.margin-xy {
+  margin: $baseline;
+}
+
+.extra-margin-top {
+  margin-top: $baseline * 3.5;
+}
+
+.margin-half-xy {
+  margin: $baseline / 2;
+}
+
+.section-margin {
+  margin: $baseline * 2;
+}
+
+.section-margin-y {
+  margin-top: $baseline * 2;
+  margin-bottom: $baseline * 2;
+}
+
+.section-margin-x {
+  margin-left: $baseline * 2;
+  margin-right: $baseline * 2;
+}
+
+
+/*---------------------------------
+      Alignment and positioning
+ ----------------------------------*/
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.equal {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.stay-right {
+  position: absolute;
+  bottom: $baseline;
+  right: $baseline;
+}
+
+.stay-left {
+  position: absolute;
+  bottom: $baseline;
+  left: $baseline;
+}
+
+.pos-bottom { // Parent has to have position relative, fixed or absolute (not static).
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.item-relative {
+  position: relative;
+}
+
+.item-absolute {
+  position: absolute;
+}
+
+.item-fixed {
+  position: fixed;
+  z-index: 18;
+  &--top {
+    @extend .item-fixed;
+    top: 0;
+  }
+}
+
+/*---------------------------------
+      Gutters
+ ----------------------------------*/
+
+.gutter {
+  padding: 0 15px;
+}
+.no-gutter {
+  padding: 0;
+}
+
+
+/*---------------------------------
+      Pointer Events
+ ----------------------------------*/
+
+.click {
+  &--off {
+    pointer-events: none;
+  }
+  &--on {
+    pointer-events: auto;
+  }
+}

@@ -1,0 +1,32 @@
+// --------- SLIDER -------- //
+
+.kiwi-slider {
+    margin-bottom: 2em;
+    .slider {
+        button.slick-arrow {
+            z-index: 50;
+            &.slick-prev {
+                left: 25px;
+                &::before {
+                    font-size: 30px;
+                }
+            }
+            &.slick-next {
+                right: 25px;
+                &::before {
+                    font-size: 30px;
+                }
+            }
+        }
+        .slick-list {
+            height: 400px;
+            width: auto;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                height: 400px;
+                width: 100%;
+            }
+        }
+    }
+}

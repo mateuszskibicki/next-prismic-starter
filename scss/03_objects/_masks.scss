@@ -1,0 +1,95 @@
+// -------- SETTINGS FOR MASKS  -------- //
+
+
+// ---- Black and white flexible ---- //
+
+@mixin cover-black($transparency) {
+  background: rgba($black, $transparency);
+}
+
+@mixin cover-white($transparency) {
+  background: rgba($white, $transparency);
+}
+
+@mixin cover-anthracite($transparency) {
+  background: rgba($tertiary-color, $transparency);
+}
+
+
+// ---- Black ---- //
+
+@mixin cover-black-reg() {
+  background-color: rgba($black,0.5);
+}
+
+.cover-black-fine {
+  @include cover-black(0.2);
+}
+
+.cover-black-medium {
+  @include cover-black(0.5);
+}
+
+.cover-black-strong {
+  @include cover-black(0.7);
+}
+
+.cover-black-extra-strong {
+  @include cover-black(0.9);
+}
+
+
+// ---- White ---- //
+
+.cover-white-fine {
+  @include cover-white(0.2);
+}
+
+.cover-white-medium {
+  @include cover-white(0.5);
+}
+
+.cover-white-strong {
+  @include cover-white(0.7);
+}
+
+.cover-white-extra-strong {
+  @include cover-white(0.9);
+}
+
+
+// ---- Dark grey - anthracite ---- //
+
+.cover-anthracite-fine {
+  @include cover-anthracite(0.2);
+}
+
+.cover-anthracite-medium {
+  @include cover-anthracite(0.5);
+}
+
+.cover-anthracite-strong {
+  @include cover-anthracite(0.7);
+}
+
+.cover-anthracite-extra-strong {
+  @include cover-anthracite(0.9);
+}
+
+.mask, .cover {
+  &--brand-muted-reg {
+    background-color: rgba(desaturate($primary-color-1,30%),0.5);
+  }
+  &--brand-muted-strong {
+    background-color: rgba(desaturate($primary-color-1,30%),0.7);
+  }
+  &--brand-muted-opaque {
+    background-color: rgba(desaturate($primary-color-1,30%),0.95);
+  }
+  &--secondary-reg {
+    background-color: rgba($secondary-color,0.5);
+  }
+  &--secondary-opaque {
+    background-color: rgba($secondary-color,0.95);
+  }
+}

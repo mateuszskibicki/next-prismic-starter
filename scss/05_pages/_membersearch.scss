@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------------------
+          Styles for the members search
+ --------------------------------------------------------------------------*/
+
+.members-list-tile {
+  margin: 2em auto;
+  max-width: 400px;
+  height: 360px;
+  position: relative;
+  ul.member-details {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 90%;
+    span.warning {
+      padding: 0 !important;
+    }
+    li {
+      .members-tile-title, .members-tile-job-title {
+        margin-bottom: 0;
+      }
+      .members-tile-title {
+        color: $primary-color-1;
+    }
+      h6 {
+        font-size: 100%;
+      }
+    }
+  }
+  hr {
+    width: 80%;
+    border-color: lighten($tertiary-color,40%);
+  }
+  a {
+    margin: 0 auto;
+    button {
+      display: inherit;
+      margin: inherit;
+    }
+  }
+}
+
+.member-view-bottom {
+  position: absolute;
+  bottom: $baseline * 2/3;
+  text-align: center;
+  left: 0;
+  width:100%;
+}
+
+.rating {
+  padding-top: 5px;
+}

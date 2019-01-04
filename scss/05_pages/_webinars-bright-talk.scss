@@ -1,0 +1,13 @@
+/*----------------------------------------------------------
+          Styles for Bright Talk  Webinars
+ -----------------------------------------------------------*/
+
+.bright-talk-webinars {
+  &__summary {
+    text-align: justify;
+    margin-bottom: 2.5em;
+    p>em{
+      font-weight: 500;
+    }
+  }
+}

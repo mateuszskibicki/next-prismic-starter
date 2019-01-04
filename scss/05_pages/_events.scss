@@ -1,0 +1,66 @@
+/*--------------------------------------------------------------------------
+          Styles for the Events
+ --------------------------------------------------------------------------*/
+
+.events-body {
+  margin-bottom: 2em;
+  //for tiles
+  .events-item {
+    @extend .tile-item;
+    * {
+      color: $white;
+    }
+    .item-tile-header-background  {
+      background: $primary-color-1; // mm- move to themes
+    }
+    .item-tile-background-image { // mm - remove later source - react should generate bg
+      background-image: url('/images/bg-events-london.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 280px;
+    }
+  }
+  //Event full view
+  .event-header {
+    h1, h4 {
+      margin-bottom: 0.3em;
+    }
+  }
+  .event-description {
+    margin: 2em 0;
+    .event-main-description, .event-agenda, .event-footer {
+      margin-bottom: inherit;
+    }
+    .event-main-description {
+      p {
+        text-align: justify;
+      }
+    }
+    h6 {
+      margin-bottom: 0.5em;
+    }
+    .event-agenda {
+      ul.agenda {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin: 0.3em;
+          span.event-time {
+            min-width: 200px;
+            padding-right: 0.5em;
+            margin-right: 0.5em;
+            font-weight: 500;
+            border-right: 1px solid lighten($tertiary-color,40%);
+          }
+        }
+      }
+    }
+    .event-footer {
+      .btn {
+        margin: 0 0 2em;
+      }
+    }
+  }
+}

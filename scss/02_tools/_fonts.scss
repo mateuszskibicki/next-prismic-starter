@@ -1,0 +1,18 @@
+// -------- VARIABLES FOR FONTS -------- //
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+$ff-OpenSans: 'Open Sans', Helvetica, Sans-Serif;
+$ff-Lato: 'Lato', Helvetica, Sans-Serif;
+$ff-Montserrat: 'Montserrat', Helvetica, Sans-Serif;
+$ff-Roboto: "Roboto", "Franklin Gothic Medium", Tahoma, sans-serif;
+
+@mixin font-full($font-size, $font-weight, $margin, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  margin: $margin;
+  line-height: $line-height;
+}

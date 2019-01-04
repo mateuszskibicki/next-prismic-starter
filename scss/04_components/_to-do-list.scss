@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------------------
+                  To Do list
+ --------------------------------------------------------------------------*/
+.to-do-list {
+    padding-top: 2em;
+    &__container {
+        width: 100%;
+        @include mq($until: tb) {
+            .affix {
+            position: static;
+            }
+        }
+        .stars {
+        background: $primary-color-1 url('/images/background-todolist.jpg') no-repeat;
+        background-blend-mode: difference;
+        @include mq($until: tb) {
+            background: $primary-color-1;
+        }
+        color: $white;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 1em 2em 0.1em;
+        span {
+            font-size: 2em;
+        }
+        }
+        .list-content {
+            padding: 0 0.7em;
+            padding-top: 0.7em;
+            border: 1px solid $grey-light;
+            hr {
+                border-top: 1px solid $primary-color-1;
+                margin: 16px 0;
+            }
+            &__title {
+                font-size: 0.8em;
+            margin-bottom: 0;
+            }
+            &__list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                &--item {
+                label {
+                    font-weight: 400;
+                    margin-bottom: 10px;
+                }
+                }
+            }
+        }
+    }
+}

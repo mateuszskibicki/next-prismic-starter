@@ -1,0 +1,207 @@
+/*----------------------------------------------------------
+          Styles for Webinars
+ -----------------------------------------------------------*/
+
+
+/*-----Mods for common elements used on webinars page*/
+.webinars-body {
+	.link-to-video-placeholder {
+		display: block;
+		margin-bottom: 3em;
+		position: relative;
+		text-align: center;
+		img {
+			width: 100%;
+		}
+		&:before, &:after {
+			display: block;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			@include transition($fast-ease);
+		}
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: rgba($black,0.1);
+			left: 0;
+		}
+		&:after {
+			font-family: 'FontAwesome';
+			content: '\f144 ';
+			color: $white;
+			top: 70%;
+			left: 0;
+			text-align: center;
+			font-size: 2em;
+			opacity: 0;
+		}
+		&:hover {
+			&:before {
+				background: rgba($black,0.4);
+			}
+			&:after {
+				font-family: 'FontAwesome';
+				top: 45%;
+				font-size: 4em;
+				opacity: 1;
+			}
+		}
+	}
+	.webinar-teaser {
+		width: 100%;
+	}
+  .webinar-item {
+    @extend .tile-item;
+    * {
+      color: $white;
+    }
+    .item-tile-background-image {
+      background-image: url('/images/bg-events-london.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  }
+  /*----- Webinar Tiles -----*/
+
+
+
+
+
+  .webinar-tile-info {
+    color: $tertiary-color;
+    padding: $baseline;
+  }
+
+
+
+
+
+
+  /*----- Individual webinar -----*/
+
+  .webinar-title-single {
+    padding-bottom: $baseline /6;
+  }
+
+  .webinar-industry {
+    font-weight: 500;
+    margin-bottom: $baseline / 6;
+    padding-bottom: $baseline /6;
+  }
+
+  .webinar-location {
+    font-weight: 500;
+  }
+  
+  
+  
+  
+  /*---- Sliders ----*/
+  /*---- Series ----*/
+  
+  .course-module-slider {
+    @extend .items-slider;
+    .item-slide {
+      .text-box {
+        height: $baseline * 6;
+      }
+    }
+  }
+
+
+  /*----- Reviews -----*/
+
+  .slider-wrapper {
+    background: $primary-color-1; // mm - check which var should be here
+    margin: 2em 0;
+    padding: 3em;
+    .frame-3 {
+      padding: 10px;
+    }
+
+  }
+  .slider-webinar-reviews {
+    $arrow-size: 24px;
+    $dot-size: 10px;
+    background: $white;
+    .slide {
+      padding: 2em;
+      p {
+        text-align: center;
+
+      }
+      .review-body {
+        max-width: 1024px;
+        margin: 0 auto;
+        .review {
+          font-weight: 700;
+          font-size: 1.2em;
+        }
+        .webinar-user-name {
+          p {
+            margin: 0;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .slick-prev, .slick-next {
+      width: $arrow-size;
+      height: $arrow-size;
+      &:before {
+        background: $primary-color-2;
+        font-family: 'FontAwesome';
+        width: inherit;
+        height: inherit;
+        line-height: $arrow-size;
+        display: block;
+        font-size: $arrow-size*0.5;
+        opacity: 1;
+        @include border-radius(4px);
+        @include transition($fast-ease);
+      }
+      &:hover {
+        &:before {
+          background: darken($primary-color-2,10%);
+        }
+      }
+    }
+    .slick-prev {
+      left: -44px;
+      &:before {
+        content: '\f104';
+      }
+    }
+    .slick-next {
+      right: -44px;
+      &:before {
+        content: '\f105';
+      }
+    }
+    ul.slick-dots {
+      bottom: -44px;
+      li {
+        button {
+          background: $white;
+          @include border-radius(50%);
+          width: $dot-size;
+          height: $dot-size;
+          &:before {
+            content: '';
+          }
+        }
+      }
+      .slick-active {
+        button {
+          background: $primary-color-2;
+        }
+      }
+    }
+  }
+}
+
+

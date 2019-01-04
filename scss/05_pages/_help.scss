@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------------------
+                Styles for settings page
+ --------------------------------------------------------------------------*/
+
+.help-body {
+  margin-bottom: 2em;
+	.form-settings-basic {
+		margin-bottom: 2em;
+	}
+}
+
+.help-text {
+	h1 {
+		display: none;
+	}
+	.membership-nav {
+	}
+}
+
+.faq-list {
+	.faq-item {
+		margin-bottom: 2em;
+		h5 {
+			margin-bottom: 0.3em;
+		}
+		p {
+			text-align: justify;
+		}
+		&:last-child {
+			margin-bottom: 0;
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+ul.contact-details {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li {
+		overflow: hidden;
+		margin-bottom: 0.5em;
+		i, a, address {
+			float: left;
+			display: block;
+			margin: 0;
+			color: $tertiary-color;
+			font-weight: 400;
+		}
+		i {
+			color: $white;
+			padding: 4px;
+			font-size: 0.8em;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			margin-right: 1em;
+			@include border-radius(2px);
+			&:before {
+				display: block;
+				width: 100%;
+			}
+			&.fa-phone, &.fa-twitter {
+				padding-top: 5px;
+			}
+		}
+		a:hover {
+			text-decoration: underline !important;
+		}
+		a, address {
+		
+		}
+	}
+}

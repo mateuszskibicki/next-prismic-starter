@@ -1,0 +1,952 @@
+// -------- New Profile Page -------- //
+
+.mode-switch {
+	position: fixed;
+	bottom: 10px;
+	left: 0.0rem;
+	background-color: darken($white,90%);
+	color: $white;
+	padding: 1.1rem;
+	box-shadow: 0 0 16px rgba($black,0.16);
+	@include border-radius(0 30px 30px 0);
+	overflow: hidden;
+	span, button {
+		float: left;
+	}
+	span {
+		font-size: 0.8rem;
+		margin-right: 1em;
+		display: block;
+	}
+}
+ 
+.page-user-profile {
+	background-color: #f2f2f2;
+	font-weight: 300;
+	h1, h2, h3, h4, h5, h6, p {
+		font-weight: 300;
+		font-family: 'Open Sans';
+	}
+	// ---- new styles for user-profile ---- // --NEW 170815
+	h1.user-name {
+		color: $white;
+		margin-bottom: 0.3em;
+		font-weight: 300;
+		@include mq($until: mb) {
+			font-size: 1.2em;
+		}
+		@include mq($from: mb, $until: sph) {
+			font-size: 2.0em;
+		}
+		@include mq($from: sph, $until: tb) {
+			font-size: 2.2em;
+		}
+	}
+	h2.profile-section-header {
+		color: primary-color-1;
+		font-weight: 400;
+		text-transform: uppercase;
+		position: relative;
+		overflow: hidden;
+		@include mq($until: sph) {
+			font-size: 1.4em;
+			letter-spacing: 0.2em;
+		}
+		@include mq($from: sph) {
+			font-size: 1.6em;
+			letter-spacing: 0.3em;
+		}
+		@media(max-width: 500px) {
+			margin-bottom: 0;
+		}
+		&:after {
+			content: '';
+			color: primary-color-1;
+			display: inline-block;
+			width: 100%;
+			border: 1px solid;
+			position: absolute;
+			top: 50%;
+			margin-left: 0.5em;
+		}
+	}
+	h3.category-name {
+		color: $primary-color-1;
+		font-size: 1.4em;
+		font-weight: 400;
+	}
+	p {
+		font-size: 1em;
+	}
+}
+
+.user-banner {
+	width: 100%;
+	position: relative;
+	top: 0;
+	@include transition($fast-ease);
+	.user-banner-top {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		//@include background-image($bg-particles-placeholder, center, no-repeat, cover);
+		.details-wrapper {
+			position: absolute;
+			bottom: 0;
+		}
+		.bg-particles {
+			@include background-gradient($gradient-dark-brand);
+			position: absolute;
+			width: 100%;
+			overflow: hidden;
+			canvas {
+				position: absolute;
+				height: 300px !important;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				@include mq($until:sph) {
+					min-width: 900px;
+				}
+				@include mq($from:sph, $until:tb) {
+					min-width: 1300px;
+				}
+				@include mq($from:tb, $until:dsxl) {
+					min-width: 1920px;
+				}
+				@include mq($from:dsxl) {
+					min-width: 3000px;
+				}
+			}
+		}
+		.container {
+			//pointer-events: none; // --CIN
+		}
+	}
+	.user-banner-bottom {
+		background: darken($white,5%);
+		padding-bottom: 2em;
+	}
+	.reference {
+		position: relative;
+	}
+	.details-wrapper {
+		@include transition($fast-ease);
+	}
+	.profile-pic {
+		//background-image: url('../img/profile-david-harrison.jpg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		@include border-radius(50%);
+		position: absolute;
+		@include transition($fast-ease);
+	}
+	.btn-share {
+		position: absolute;
+		right: 1em;
+		svg {
+			fill: $white;
+			width: 1.2em;
+			height: 1.2em;
+		}
+		@include mq($until: mb) {
+			top: 1em;
+		}
+		@include mq($from: mb) {
+			bottom: 1em;
+		}
+		.share-icon {
+			display: inline-block;
+			overflow: hidden;
+			&::before {
+				content: 'Share your profile';
+				color: #b75f00;
+				font-size: 1.2em;
+				padding-right: .6em;
+				text-transform: uppercase;
+				text-align: right;
+				width: 0;
+				overflow: hidden;
+				@include transition($fast-ease);
+				right: -192px;
+				position: relative;
+				opacity: 0;
+			}
+			&:hover::before {
+				color: $white;
+				right: 0;
+				width: 192px;
+				opacity: 1;
+			}
+		}
+	}
+	.new-profile-headline {
+		margin-top: 1em;
+		overflow: hidden;
+		.user-info {
+			margin-bottom: 0;
+		}
+		.user-info, em, a {
+			float: left;
+			display: block;
+		}
+		.btn-inline-icon {
+			svg, i.fa {
+				margin-left: 1em;
+			}
+		}
+	}
+	.user-details {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		.item-user-details {
+			display: block;
+			font-weight: 300;
+			margin-right: 1em;
+			padding: 0 1em 0 0;
+			position: relative;
+			.user-info {
+				float: left;
+				display: block;
+				margin-right: 1em;
+			}
+		}
+	}
+	@include mq($until: mb) {
+		$size-profile-pic: 90px;
+		padding-top: $size-profile-pic*3/4;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top .reference {
+			height: $size-profile-pic*3/4;
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1;
+		}
+		.profile-pic {
+			width: $size-profile-pic;
+			height: $size-profile-pic;
+			bottom: $size-profile-pic*(-1/2);
+		}
+	}
+	@include mq($from: mb, $until: sph) {
+		$size-profile-pic: 140px;
+		padding-top: $size-profile-pic*3/4;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top .reference {
+			height: $size-profile-pic*3/4;
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1;
+		}
+		.profile-pic {
+			width: $size-profile-pic;
+			height: $size-profile-pic;
+			bottom: $size-profile-pic*(-1/2);
+		}
+	}
+	@include mq($from: sph, $until: tb) {
+		$size-profile-pic: 160px;
+		padding-top: $size-profile-pic*3/4;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top .reference {
+			height: $size-profile-pic*3/4;
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1;
+		}
+		.profile-pic {
+			width: $size-profile-pic;
+			height: $size-profile-pic;
+			bottom: $size-profile-pic*(-1/2);
+		}
+	}
+	@include mq($until: tb) {
+		.user-nav-box {
+			display: none;
+		}
+	}
+	@include mq($from: tb) {
+		$size-profile-pic: 200px;
+		padding-top: $size-profile-pic*3/4;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top .reference {
+			height: $size-profile-pic*3/4;
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1;
+		}
+		.profile-pic {
+			width: $size-profile-pic;
+			height: $size-profile-pic;
+			bottom: $size-profile-pic*(-1/2);
+		}
+	}
+	.form-standard-profile {
+		margin-bottom: 1em;
+	}
+}
+.user-nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	pointer-events: auto;  // --CIN
+	ul.profile-nav {
+		list-style: none;
+		padding: 1em 1em 0 0;
+		margin: 0;
+		text-align: right;
+		li {
+			margin-bottom: 0.5em;
+		}
+		.scroll-to {
+			font-size: 1.6em;
+			font-weight: 300;
+			color: $tertiary-color;
+			text-transform: uppercase;
+			background: none;
+			border: none;
+			padding: 0;
+			outline: none;
+			position: relative;
+			@include transition($fast-ease);
+			&:after {
+				width: 1em;
+				height: 1em;
+				display: block;
+				position: absolute;
+				top: 0;
+				right: -1em;
+				content: '\f100';
+				font-family: 'FontAwesome';
+				opacity: 0;
+				@include transition($fast-ease);
+			}
+			&:hover {
+				color: primary-color-1;
+				text-decoration: none;
+				padding-right: 1em;
+				&:after {
+					right: 0;
+					opacity: 1;
+				}
+			}
+		}
+		.btn {
+			margin-top: 1em;
+		}
+	}
+}
+$size-header-desktops: 0px;
+$minify-ratio: 0.6;
+.user-minified {
+	@include mq($from: tb) {
+	.user-banner-top {
+		position: fixed;
+	}
+}
+	@include mq($until: mb) {
+		$size-profile-pic: 60px;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top {
+			top: 64px !important;
+			.reference {
+				height: $size-profile-pic*3/4 !important;
+			}
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1 !important;
+		}
+		.profile-pic {
+			width: $size-profile-pic !important;
+			height: $size-profile-pic !important;
+			bottom: $size-profile-pic*(-1/2) !important;
+		}
+	}
+	@include mq($from: mb, $until: sph) {
+		$size-profile-pic: 100px;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top {
+			top: 64px !important;
+			.reference {
+				height: $size-profile-pic*3/4 !important;
+			}
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1 !important;
+		}
+		.profile-pic {
+			width: $size-profile-pic !important;
+			height: $size-profile-pic !important;
+			bottom: $size-profile-pic*(-1/2) !important;
+		}
+	}
+	@include mq($from: sph, $until: tb) {
+		$size-profile-pic: 110px;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top {
+			top: 0 !important;
+			.reference {
+				height: $size-profile-pic*3/4 !important;
+			}
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1 !important;
+		}
+		.profile-pic {
+			width: $size-profile-pic !important;
+			height: $size-profile-pic !important;
+			bottom: $size-profile-pic*(-1/2) !important;
+		}
+	}
+	@include mq($from: tb) {
+		$size-profile-pic: 120px;
+		.bg-particles {
+			height: $size-profile-pic*3/4;
+		}
+		.user-banner-top {
+			top: 0 !important;
+			.reference {
+				height: $size-profile-pic*3/4 !important;
+			}
+		}
+		.details-wrapper {
+			padding-left: $size-profile-pic*1.1 !important;
+		}
+		.profile-pic {
+			width: $size-profile-pic !important;
+			height: $size-profile-pic !important;
+			bottom: $size-profile-pic*(-1/2) !important;
+		}
+	}
+}
+
+
+.user-visibility, 
+.user-summary, 
+.user-experience, 
+.user-endorsement, 
+.user-education, 
+.user-certificates, 
+.user-achievements {
+	.user-section {
+		padding: 2em 0;
+		.editor {
+			p {
+				//text-align: justify;
+				font-size: 1em;
+				line-height: 1.4;
+	
+				@media(max-width: 500px) {
+					line-height: 1.6;
+				}
+			}
+			ul {
+				//@extend ul.basic;
+				margin-bottom: 2em;
+			}
+		}
+		.form-standard-profile {
+			margin-bottom: 4em;
+		}
+	}
+}
+
+.user-experience, 
+.user-endorsement, 
+.user-education, 
+.user-certificates, 
+.user-achievements {
+	margin-bottom: 2em;
+}
+
+
+.profile-section-header-box {
+	position: relative;
+	.profile-section-header {
+		height: 56px;
+		line-height: 56px;
+	}
+	.btn[data-position="right"] {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.list-experience, 
+.list-endorsements, 
+.list-education, 
+.list-certificates, 
+.list-achievements {
+	.list-section {
+		.item-header, .item-header a, .new-profile-info a  {
+			color: $text-color;
+		  }
+		margin-bottom: 2em;
+		.item-display-mode {
+			position: relative;
+			.btn.btn-materials {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+		.new-profile-label {
+			color: lighten($tertiary-color,30%);
+			@include mq($until:tb) {
+				text-align: left;
+			}
+			@include mq($from:tb) {
+				text-align: right;
+			}
+		}
+		.item-header, .item-header a {
+			font-weight: 600;
+		}
+		.new-profile-info {
+			p {
+				text-align: justify;
+			}
+		}
+		.width-reducer {
+			display: block;
+			padding-right: 80px;
+		}
+		@include mq($until: tb) {
+			.new-profile-label {
+				margin-bottom: 0.5em;
+			}
+			.new-profile-info {
+				margin-bottom: 1em;
+			}
+		}
+		@include mq($from: tb) {
+			.new-profile-label, .new-profile-info {
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
+
+.user-visibility, 
+.user-summary {
+	background: darken($white,5%);
+}
+
+.user-visibility {
+	padding: 0 0 2em 0;
+	.profile-visibility-box {
+		padding: 2em;
+		overflow: hidden;
+		background-color: $white;
+		position: relative;
+		z-index: 1;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			filter: brightness(97%);
+			z-index: -1;
+		}
+		.btn-share {
+			float: right;
+			padding: .2em .6em;
+			background: rgba(226,226,226,0.2);
+			border-radius: 2px;
+			border: .5px solid rgba(226,226,226,0.3);
+			@include transition(all .3s ease-in);
+			&:hover {
+				background: rgba(226,226,226,1);
+				text-decoration: none;
+			}
+			.share-label {
+				color: $tertiary-color;
+				font-size: 1em;
+				padding-right: .6em;
+				&:hover {
+					color: $black;
+				}
+			}
+			.share-icon {
+				svg {
+					fill: $tertiary-color;
+					height: 1em;
+					width: 1em;
+					&:hover {
+						fill: $black;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin  profile-notification() {
+	padding-left: 2em;
+	margin: 1em 0;
+	font-size: 0.9em !important;
+	font-weight: 600 !important;
+	position: relative;
+}
+
+.section-visibility-info {
+	color: lighten($tertiary-color,40%);
+	@include profile-notification();
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 1.6em;
+		height: 1.6em;
+		left: 0;
+		top: 50%;
+		opacity: 0.5;
+		transform: translateY(-50%);
+	}
+}
+.endorsement-status-info {
+	@include profile-notification();
+	span {
+		position: absolute;
+		left: 0;
+		width: 1em;
+		height: 1em;
+		svg {
+			fill: primary-color-1;
+		}
+	}
+}
+.published-endorsements-list {
+  margin: 2em 0 0;
+}
+.endorsement-manager {
+  .list-endorsement {
+    border: 1px solid $grey-light;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  .item-endorsements {
+    margin-bottom: 4em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .endorsement-text {
+    text-align: justify;
+  }
+  .endorsement-position {
+    margin-bottom: 0;
+    color: lighten($tertiary-color,20%);
+  }
+  .endorser-details {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      overflow: hidden;
+    }
+    svg {
+      float: left;
+      margin-right: 0.5em;
+      fill: $grey-light;
+    }
+	.endorser-name, 
+	.endorser-email, 
+	.endorser-date {
+      margin-bottom: 0.3rem;
+      line-height: 1.6rem;
+    }
+    .endorser-date {
+      font-size: 0.8em;
+      //color: lighten($tertiary-color,20%);
+      font-weight: 600;
+      span {
+        text-transform: uppercase;
+        color: lighten($tertiary-color,35%);
+      }
+    }
+  }
+	.new-profile-label {
+		display: none;
+	}
+	@include mq($from:sph) {
+		.new-profile-info {
+			width: 100%*2/3;
+		}
+		.new-profile-controls {
+			width: 100%*1/3;
+		}
+	}
+	.endorsement-box, 
+	.endorser-details {
+		@include mq($until:sph) {
+			margin-bottom: 30px;
+		}
+	}
+	.confirm-delete {
+    $background-confirm: darken($white,5%);
+    background-color: $background-confirm;
+    padding: 1rem;
+    position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			@include mq($until:sph) {
+				left: 50%;
+				top: -20px;
+				transform: translateX(-50%);
+				border-bottom: 20px solid $background-confirm;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+			}
+			@include mq($from:sph) {
+				left: -20px;
+				border-right: 20px solid $background-confirm;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+			}
+		}
+    .confirmation-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+	}
+}
+
+.new-profile-listed-details {
+	list-style: none;
+	margin: 0;
+	li {
+		display: inline-block;
+		margin-right: 0.5em;
+		&:after {
+			content: ', ';
+		}
+		&:last-child {
+			&:after {
+				content: '.';
+			}
+		}
+	}
+}
+
+.category-achievements {
+	padding-left: 1em;
+	.list-achievements {
+		position: relative;
+		padding-left: 1em;
+		&:before {
+			border-left: 1px solid lighten(desaturate($primary-color-1,20%),20%);
+			content: '';
+			display: block;
+			width: 1em;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #f2f2f2;
+		}
+	}
+}
+
+.item-wrapper {
+	border-bottom: 1px solid lighten($tertiary-color, 40%);
+	margin-bottom: 2em;
+	padding: 1em 0;
+	position: relative;
+	&:last-child {
+		margin-bottom: 0;
+		border: none;
+	}
+	.icon-custom {
+		display: block;
+		max-width: 70px;
+		@include mq($until: tb) {
+			position: absolute;
+			top: -0.5em;
+			left: -0.5em;
+		}
+		@include mq($from: tb) {
+			min-width: 50%;
+		}
+	}
+}
+
+.endorsement-box {
+	.endorsement-text {
+		$line-color: lighten($tertiary-color,40%);
+		font-style: italic;
+		padding-bottom: 0.8em;
+		border-bottom: 1px solid $line-color;
+		position: relative;
+		&:before, &:after {
+			content: '';
+			display: block;
+			width: 30px;
+			position: absolute;
+			border-right: 30px solid transparent;
+		}
+		&:before {
+			border-top: 20px solid $line-color;
+			left: 50px;
+			bottom: -20px;
+		}
+		&:after {
+			border-top: 20px solid #f2f2f2;
+			left: 51px;
+			bottom: -18px;
+		}
+	}
+	.endorsement-name {
+		color: primary-color-1;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	.endorsement-position {
+		font-size: 0.9em;
+	}
+}
+
+$form-bg: darken($white,10%);
+.form-standard-profile {
+	@include mq($from:sph) {
+		background-color: $form-bg;
+		padding: 2em;
+	}
+}
+
+.profile-publish-banner {
+	@include mq($from: tb) {
+		display: none;
+	}
+	@include background-image($bg-forum, center, no-repeat, cover);
+	.cover-custom {
+		color: $white;
+		padding: 3em 1em;
+		@include cover-black-reg();
+	}
+}
+
+.achievements-type {
+	margin: 2em 0;
+}
+.achievements-type__nav {
+	list-style: none;
+	margin: 0;
+	border: 1px solid $form-bg;
+	text-align: center;
+	.achievements-type__nav__item {
+		background: transparent;
+		border: none;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		text-transform: uppercase;
+		padding: 0.5em 0;
+		font-weight: 400;
+		letter-spacing: 0.2em;
+		outline: none;
+		span {
+			border-right: 1px solid $form-bg;
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 0.5em 1em;
+			color: lighten($tertiary-color,20%);
+			position: relative;
+			top: 0;
+			@include transition($fast-ease);
+		}
+		@include mq($from: tb) {
+			&:hover span {
+				top: -2px;
+			}
+		}
+	}
+	li {
+		.achievements-type__nav__item span {
+			border-right: 1px solid $form-bg;
+		}
+		display: inline-block;
+		text-align: center;
+		&:last-child .achievements-type__nav__item span {
+			border: none;
+		}
+		@include mq($until: mb) {
+			span {
+				font-size: 0.7rem;
+			}
+		}
+		@include mq($from: mb) {
+			width: 100%*1/3;
+		}
+	}
+	.item-active:after {
+		content: '';
+		width: 12px;
+		height: 12px;
+		@include border-radius(50%);
+		border: 1px solid $form-bg;
+		background-color: $white;
+		position: absolute;
+		bottom: -6px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.profile-error-message {
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: darken($white,3%);
+	border-left: 4px solid $alert-color;
+	color: lighten($tertiary-color,20%);
+	font-weight: 600;
+	overflow: hidden;
+	svg, .message {
+		float: left;
+	}
+	svg {
+		fill: $alert-color;
+		margin-right: 0.5em;
+	}
+}
+
+.item-tab-profile {
+    h6.endorsement-category-name {
+        color: $primary-color-1;
+        i.fa {
+            background: $primary-color-1;
+            color: $text-color;
+        }
+    }
+}
+
+.nav-achievements-type__item:hover span, .item-active span {
+	color: $primary-color-1;
+  }

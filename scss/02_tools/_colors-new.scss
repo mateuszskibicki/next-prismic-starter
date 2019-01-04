@@ -1,0 +1,125 @@
+// ------------------------------------------------------------------ \\
+// Default colours                                                     \\
+// ------------------------------------------------------------------ \\
+
+// ----- Brand colours ----- \\
+$tangaroa: #03163D !default;
+$pomegranate: #E84E0F !default;
+$pacific-blue: #0C93BC !default;
+$outer-space: #30353A !default;
+
+// ----- Helper colours ----- \\
+$white: #ffffff !default;
+$alabaster-white: #f7f7f7 !default;
+$black: #1f1f1f !default;
+$grey: #b8b8b8 !default;
+$grey-light: #dedddd !default;
+$grey-cold-dark: #1A1D25 !default;
+$grey-dark: #4d4d4d !default;
+//Warning colours
+$crimson-red: #df1e14 !default;
+$earls-green: #b2cd3d !default;
+
+
+// ------------------------------------------------------------------ \\
+// In Touch Network Brand Colours                                     \\
+// ------------------------------------------------------------------ \\
+
+$primary-color-1: $tangaroa !default;
+$primary-color-2: $pomegranate !default;
+// The secondary colour is designated to business to business when designing communications. It can be used with the primary-color-1 primary colour.
+$secondary-color: $pacific-blue !default;
+// The tertiary colour is for body copy, it should only be used sparingly such as in graphs or tables, in presentations only.
+$tertiary-color: $outer-space !default;
+
+$link-color: $primary-color-1 !default;
+$hover-color: $primary-color-1 !default;
+
+$text-color: $tertiary-color !default;
+
+$alert-color: $crimson-red;
+
+// ----- Shades ----- \\
+$primary-color-1-90: lighten($tangaroa, 10%) !default;
+$primary-color-1-80: lighten($tangaroa, 20%) !default;
+$primary-color-1-70: lighten($tangaroa, 30%) !default;
+$primary-color-1-60: lighten($tangaroa, 40%) !default;
+$primary-color-1-50: lighten($tangaroa, 50%) !default;
+$primary-color-1-40: lighten($tangaroa, 60%) !default;
+$primary-color-1-30: lighten($tangaroa, 70%) !default;
+$primary-color-1-20: lighten($tangaroa, 80%) !default;
+$primary-color-1-10: lighten($tangaroa, 90%) !default;
+
+$primary-color-1-pastel: lighten(desaturate($primary-color-1,15%),40%);
+
+
+$primary-color-2-90: lighten($pomegranate, 10%) !default;
+$primary-color-2-80: lighten($pomegranate, 20%) !default;
+$primary-color-2-70: lighten($pomegranate, 30%) !default;
+$primary-color-2-60: lighten($pomegranate, 40%) !default;
+$primary-color-2-50: lighten($pomegranate, 50%) !default;
+$primary-color-2-40: lighten($pomegranate, 60%) !default;
+$primary-color-2-30: lighten($pomegranate, 70%) !default;
+$primary-color-2-20: lighten($pomegranate, 80%) !default;
+$primary-color-2-10: lighten($pomegranate, 90%) !default;
+
+$primary-color-2-pastel: lighten(desaturate($primary-color-2,15%),40%);
+
+$secondary-color-90: lighten($pacific-blue, 10%) !default;
+$secondary-color-80: lighten($pacific-blue, 20%) !default;
+$secondary-color-70: lighten($pacific-blue, 30%) !default;
+$secondary-color-60: lighten($pacific-blue, 40%) !default;
+$secondary-color-50: lighten($pacific-blue, 50%) !default;
+$secondary-color-40: lighten($pacific-blue, 60%) !default;
+$secondary-color-30: lighten($pacific-blue, 70%) !default;
+$secondary-color-20: lighten($pacific-blue, 80%) !default;
+$secondary-color-10: lighten($pacific-blue, 90%) !default;
+
+$secondary-color-pastel: lighten(desaturate($secondary-color,15%),40%);
+
+$tertiary-color-90: lighten($outer-space, 10%) !default;
+$tertiary-color-80: lighten($outer-space, 20%) !default;
+$tertiary-color-70: lighten($outer-space, 30%) !default;
+$tertiary-color-60: lighten($outer-space, 40%) !default;
+$tertiary-color-50: lighten($outer-space, 50%) !default;
+$tertiary-color-40: lighten($outer-space, 60%) !default;
+$tertiary-color-30: lighten($outer-space, 70%) !default;
+$tertiary-color-20: lighten($outer-space, 80%) !default;
+$tertiary-color-10: lighten($outer-space, 90%) !default;
+
+
+// ------------------------------------------------------------------ \\
+// Colour Helpers                                                     \\
+// ------------------------------------------------------------------ \\
+
+.brand-color,
+.itn-brand-color,
+.primary-color {
+    color: $primary-color-1;
+}
+
+.brand-background-color,
+.itn-brand-background-color,
+.primary-background-color  {
+    background: $primary-color-1;
+}
+
+.secondary-color,
+.itn-secondary-color {
+    color: $secondary-color;
+}
+
+.secondary-background-color,
+.itn-secondary-background-color {
+    background: $secondary-color;
+}
+
+.emphasis-color,
+.itn-emphasis-color {
+    color: $primary-color-2;
+}
+
+.emphasis-background-color,
+.itn-emphasis-background-color {
+    background: $primary-color-2;
+}

@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------------------
+          Styles for reciepts
+ --------------------------------------------------------------------------*/
+
+/*-------- Online View ----------*/
+.receipt-background {
+  background: $alabaster-white;
+}
+
+.receipt-header-arrow {
+  background: $alabaster-white;
+  border-bottom-left-radius: $baseline * 2;
+  border-bottom-right-radius: $baseline * 2;
+  height: $baseline;
+  width: $baseline * 2;
+  margin-left: auto;
+  margin-right: auto;
+  i{
+    margin: 0;
+  }
+}

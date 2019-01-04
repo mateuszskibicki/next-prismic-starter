@@ -1,0 +1,25 @@
+// -------- Incognito Mode Error -------- //
+
+.page-error-incognito-mode {
+  @include background-image($bg-network-triangles, left top, no-repeat, 40%);
+  min-height: 40em;
+  min-height: 100vh;
+  padding: 15em 2em 0;
+  padding: 30vh 2em 0;
+  .icon {
+    max-width: 200px;
+    margin: 0 auto 2em;
+  }
+  .logo {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 2em;
+  }
+  h6 {
+    color: $primary-color-1;
+  }
+  @include mq($until:tb) {
+    text-align: right;
+    @include background-image($bg-network-triangles, left top, no-repeat, 90%);
+  }
+}

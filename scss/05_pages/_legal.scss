@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------------------
+          Styles for legal related pages
+ ----------------------------------------------------------------------------*/
+
+.legal-body {
+	padding: 3em 0;
+	margin-bottom: 2em;
+	p, h4, h5, .abc li, ul li {
+		text-align: justify;
+		line-height: 1.4;
+	}
+	p, ul li {
+		font-weight: 400;
+		font-size: 1em;
+	}
+	ol {
+		padding: 0;
+		margin: 0 0 2em;
+		counter-reset: section;
+		list-style-type: none;
+		&.multilevel {
+			h4 {
+				text-transform: uppercase;
+			}
+			h4, h5 {
+				&:first-child {
+					display: inline-block;
+				}
+			}
+			h5 {
+				&:last-child {
+					font-weight: 400;
+				}
+			}
+			p, h4, h5 {
+				font-weight: 400;
+				font-size: 1em;
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+		ol {
+			padding-left: 3.6em;
+		}
+		li {
+			display: block;
+			margin-bottom: 2em;
+			position: relative;
+			&:before {
+				position: absolute;
+				width: 3.6em;
+				left: -3.6em;
+				padding-right: 0.4em;
+				text-align: right;
+				font-weight: 600;
+				counter-increment: section;
+				content: counters(section, ".") ".";
+			}
+			ol.lvl-2 li {
+				margin-bottom: 1em;
+			}
+		}
+	}
+}

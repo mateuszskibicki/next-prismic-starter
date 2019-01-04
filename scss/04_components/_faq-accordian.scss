@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------------------
+          Styles for FAQ accordian on the marketing site
+ ----------------------------------------------------------------------------*/
+
+ .faq {
+    padding: 3em 0;
+    background-position: top;
+    background-size: cover;
+    @include mq($until: tb) {
+        background-size: initial;
+    }
+    .title {
+        text-align: center;
+        vertical-align: middle;
+    }
+     .faq-accordion {
+         list-style: none;
+         padding-left: 0;
+         .faq-card {
+             background-color: $white;
+             padding: 1em;
+             margin-bottom: 2em;
+             &__header {
+                 .btn-accordion {
+                    text-align: left;
+                    padding: 0;
+                    width: 100%;
+                    background-color: transparent;
+                    .title {
+                        // font-size: 1.25em;
+                        font-weight: 700;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                    }
+                    .icon {
+                        float: right;
+                        @include mq($until: mb) {
+                            display: none;
+                        }
+                    }
+                }
+             }
+             &__body {
+                 margin-top: 1em;
+                p {
+                    margin-bottom: 0;
+                    margin-top: 1em;
+                }
+             }
+
+         }
+     }
+ }

@@ -1,0 +1,52 @@
+// --------- SERVICES DESCRIPTION -------- //
+
+.kiwi-services--description {
+    margin-bottom: 2em;
+    .kiwi-heading {
+        margin-bottom: 0.2em;
+    }
+    .kiwi-summary {
+        p {
+            margin-bottom: 1.2em;
+        }
+    }
+    .services--description-list {
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin: 15px;
+        &-item {
+            flex: 1 0 33%;
+            padding: 0 15px;
+            @include mq($until: tb) {
+                flex: 100%;
+            }
+            .kiwi-heading {
+                font-size: 1.2em;
+                font-weight: 400;
+            }
+            .kiwi-text p{
+                // font-size: 1em;
+            }
+        }
+    }
+    .description__list--inner {
+        list-style: none;
+        margin-left: 0;
+        margin-bottom: 1em;
+        &-item {
+            .item-label p {
+                display: inline;
+                font-size: 0.9em;
+                &:after {
+                    content: ':';
+                    padding-right: 0.5em;
+                }
+            }
+            .item-name p {
+                display: inline;
+                font-size: 0.9em;
+                font-weight: 600;
+            }
+        }
+    }
+}

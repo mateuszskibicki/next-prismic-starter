@@ -1,0 +1,728 @@
+/*----------------------------------------------------------
+          Styles for the all buttons
+ -----------------------------------------------------------*/
+
+
+.btn {
+  overflow: hidden;
+  height: auto;
+  outline: none;
+  font-size: 14px;
+  border-radius: 0;
+  padding: 0.8em 2.8em;
+  @include transition($fast-ease);
+  .label, .icon {
+    display: inline-block;
+    background-color: transparent;
+    font-size: inherit;
+    color: $white;;
+  }
+  .label {
+    font-weight: 400;
+    top: 0;
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    white-space: pre-wrap;       /* css-3 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+    word-break: keep-all;
+    white-space: normal;
+  }
+  .icon {
+    margin-left: 0.8em;
+  }
+  &:active,
+  &.active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &.active,
+  &.disabled,
+  &[disabled] {
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
+// Main use buttons
+.btn-primary { //TODO refactor this all down
+  color: $white;
+  background-color: darken($primary-color-2, 5%);
+  border-color: darken($primary-color-2, 5%);
+  position: relative;
+  z-index: 0;
+  &:before {
+    content: '';
+    background-color: $primary-color-2;
+    border-color: $primary-color-2;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    @include transition($fast-ease);
+  }
+  &:hover,
+  &:active, 
+  &:focus {
+    color: $white;
+    background-color: $primary-color-2;
+    border-color: $primary-color-2;
+      &:before {
+        content: '';
+        background-color: $primary-color-2;
+        border-color: $primary-color-2;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+  }
+  &--ghost {
+    color: $primary-color-2;
+    background-color: transparent;
+    border-color: darken($primary-color-2, 5%);
+    position: relative;
+    z-index: 0;
+    &:before {
+      content: '';
+      color: $primary-color-2;
+      background-color: lighten($tertiary-color, 75%);
+      border-color: $primary-color-2;
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      width: 0;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      @include transition($fast-ease);
+    }
+    &:hover,
+    &:active, 
+    &:focus {
+      color: $primary-color-2;
+        &:before {
+          content: '';
+          color: $primary-color-2;
+          background-color: lighten($tertiary-color, 75%);
+          border-color: $primary-color-2;
+          position: absolute;
+          z-index: -1;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          bottom: 0;
+      }
+    }
+  }
+}
+
+.btn-secondary {
+  color: $white;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+  position: relative;
+  z-index: 0;
+  &:before {
+    content: '';
+    background-color: $secondary-color-90;
+    border-color: $secondary-color-90;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    @include transition($fast-ease);
+  }
+  &:hover,
+  &:active, 
+  &:focus {
+    color: $white;
+    background-color: $secondary-color-90;
+    border-color: $secondary-color-90;
+      &:before {
+        content: '';
+        background-color: $secondary-color-90;
+        border-color: $secondary-color-90;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+  }
+  &--ghost {
+    color: $secondary-color-90;
+    background-color: transparent;
+    border-color: $secondary-color;
+    position: relative;
+    z-index: 0;
+    &:before {
+      content: '';
+      color: $secondary-color-90;
+      border-color: $secondary-color-90;;
+      background-color: lighten($tertiary-color, 75%);
+      border-color: $secondary-color-90;
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      width: 0;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      @include transition($fast-ease);
+    }
+    &:hover,
+    &:active, 
+    &:focus {
+      color: $secondary-color-90;
+        &:before {
+          content: '';
+          color: $secondary-color-90;
+          background-color: lighten($tertiary-color, 75%);
+          border-color: $secondary-color-90;
+          position: absolute;
+          z-index: -1;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          bottom: 0;
+      }
+    }
+  }
+}
+
+.btn-brand {
+  color: $white;
+  background-color: $primary-color-1;
+  border-color: $primary-color-1;
+  position: relative;
+  z-index: 0;
+  &:before {
+    content: '';
+    background-color: $primary-color-1-90;
+    border-color: $primary-color-1-90;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    @include transition($fast-ease);
+  }
+  &:hover,
+  &:active, 
+  &:focus {
+    color: $white;
+    background-color: $primary-color-1-90;
+    border-color: $primary-color-1-90;
+      &:before {
+        content: '';
+        background-color: $primary-color-1-90;
+        border-color: $primary-color-1-90;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+  }
+  &--ghost {
+    color: $primary-color-1-90;
+    background-color: transparent;
+    border-color: $primary-color-1;
+    position: relative;
+    z-index: 0;
+    &:before {
+      content: '';
+      color: $primary-color-1-90;
+      border-color: $primary-color-1-90;;
+      background-color: lighten($tertiary-color, 75%);
+      border-color: $primary-color-1-90;
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      width: 0;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      @include transition($fast-ease);
+    }
+    &:hover,
+    &:active, 
+    &:focus {
+      color: $primary-color-1-90;
+        &:before {
+          content: '';
+          color: $primary-color-1-90;
+          background-color: lighten($tertiary-color, 75%);
+          border-color: $primary-color-1-90;
+          position: absolute;
+          z-index: -1;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          bottom: 0;
+      }
+    }
+  }
+}
+
+.btn-warning {
+  color: $text-color;
+  background-color: transparent;
+  border-color: lighten($tertiary-color, 45%);
+
+  position: relative;
+  z-index: 0;
+  &:before {
+    content: '';
+    color: $primary-color-2-90;
+    background-color: lighten($tertiary-color, 75%);
+    border-color: $primary-color-2-70;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    @include transition($fast-ease);
+  }
+  &:hover,
+  &:active, 
+  &:focus {
+    color: $primary-color-2-90;
+    background-color: lighten($tertiary-color, 75%);
+    border-color: $primary-color-2-70;      
+      &:before {
+        content: '';
+        color: $primary-color-2-90;
+        background-color: lighten($tertiary-color, 75%);
+        border-color: $primary-color-2-70;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+  }
+}
+
+.btn-login {
+  color: $white;
+  background-color: darken($primary-color-2, 5%);
+  border-color: darken($primary-color-2, 5%);
+  position: relative;
+  z-index: 0;
+    padding: .6em 2em;
+    color: $white;
+    &:hover,
+    &:active, 
+    &:focus {
+      color: $white;
+      text-decoration: none;
+    }
+
+  &:before {
+    content: '';
+    background-color: $primary-color-2;
+    border-color: $primary-color-2;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    @include transition($fast-ease);
+  }
+  &:hover,
+  &:active, 
+  &:focus {
+    background-color: $primary-color-2;
+    border-color: $primary-color-2;
+      &:before {
+        content: '';
+        background-color: $primary-color-2;
+        border-color: $primary-color-2;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+  }
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-brand,
+.btn-warning,
+.btn-primary--ghost,
+.btn-secondary--ghost,
+.btn-warning--ghost {
+  &.small {
+    border-radius: $border-radius;
+    font-size: 12px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 1em;
+    .label, .icon {
+      display: inline-block;
+      color: inherit !important;
+      font-size: inherit;
+      line-height: inherit;
+      height: inherit;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      .icon {
+        @include transform(scale, 1.2);
+      }
+    }
+    &:before {
+      background: none;
+    }
+  }
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  &.back {
+    margin: 1em 1em 1em 0;
+  }
+}
+
+.btn-no-background {
+  padding: 0;
+  position: relative;
+  .label, .icon {
+    display: inline-block;
+    color: inherit !important;
+    position: relative;
+    font-size: 12px;
+    line-height: 34px;
+    height: 34px;
+    text-decoration: underline;
+  }
+  &:hover {
+    .icon {
+      @include transform(scale, 1.2);
+    }
+  }
+  &.search {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    padding-right: 0.4em;
+  }
+}
+
+.btn-hamburger {
+  background-color:transparent;
+  font-size: 2.5em;
+  color: $text-color;
+  padding: 0;
+  i.fa.fa-times::before {
+    color: $primary-color-2;
+  }
+}
+
+// Profile buttons
+.btn-toggle {
+  float: right;
+  position: relative;
+  height: 12px;
+  width: 56px;
+  margin: 5px 5px;
+  padding: 0;
+  border: none;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: $white;
+  outline: none;
+  background-color: darken($grey-light,15%);
+  box-shadow: inset 0 0 6px rgba($black,0.5);
+  @include border-radius(6px);
+  .dot {
+    display: block;
+    position: absolute;
+    top: -4px;
+    height: 20px;
+    width: 20px;
+    box-shadow: 0 0 6px rgba($black,0.8);
+    @include border-radius(50%);
+    @include transition($fast-ease);
+    &:before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      opacity: 0.05;
+      z-index: 0;
+      @include border-radius(50%);
+      @include transition($fast-ease);
+    }
+  }
+  &:hover, &:focus {
+    .dot:before {
+      opacity: 0.2;
+    }
+  }
+  &.toggle-off {
+    .dot {
+      left: -4px;
+      background-color: darken($grey-light,5%);
+      &:before {
+        background-color: rgba($black,0.4);
+      }
+    }
+  }
+  &.toggle-on {
+    .dot {
+      background-color: $primary-color-1;
+      left: 36px + 4px;
+      &:before {
+        background-color: $primary-color-1;
+      }
+    }
+  }
+}
+
+// Lists to align and space buttons
+%buttons-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+}
+.buttons {
+  @extend %buttons-reset;
+  li {
+    margin: 0 0.5em 0.5em;
+    .btn {
+      margin: 0;
+    }
+  }
+  &-right {
+    @extend %buttons-reset;
+    text-align: right;
+    li {
+      margin-right: 0;
+      margin-left: 0.5em;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    &--responsive {
+      @include mq($until: sph) {
+        li {
+          display: block;
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+  &-center {
+    @extend %buttons-reset;
+    text-align: center;
+    li {
+      margin-right: 0.5em;
+      margin-left: 0em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &-left {
+    @extend %buttons-reset;
+    text-align: left;
+    li {
+      margin-left: 0;
+      margin-right: 0.5em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &.small {
+    @include mq($until:sph) {
+      text-align: left;
+      li {
+        margin-left: 0;
+        margin-right: 0.5em;
+      }
+    }
+  }
+  &--module { // USED ON SEARCH FORM BUTTONS
+    @extend %buttons-reset;
+    text-align: right;
+  }
+}
+
+// Round buttons (mainly used when editing profile)
+.btn-circle {
+  padding: 0;
+  border: none;
+  background: transparent;
+  .icon {
+    width: 56px;
+    height: 56px;
+    display: block;
+    border-radius: 50%;
+    padding: 0;
+  }
+  .label {
+    line-height: 56px;
+  }
+  svg {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Icon buttons
+.btn-add {
+	.icon {
+		background: $primary-color-1;
+	}
+	svg {
+		fill: $white;
+	}
+	&:hover, &:focus {
+		.icon {
+			background: darken($primary-color-1, 10%);
+		}
+	}
+	&.disabled {
+		.icon {
+			background: tint($primary-color-1, 40%);
+			opacity: 1;
+		}
+	}
+}
+.btn-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+	.icon {
+		background: $primary-color-1-90;
+	}
+	svg {
+		fill: $white;
+	}
+	&:hover, &:focus {
+		.icon {
+			background: darken($primary-color-1-90, 10%);
+		}
+	}
+	&.disabled {
+		.icon {
+			background: tint($primary-color-1-90, 40%);
+			opacity: 1;
+		}
+	}
+}
+.btn-delete {
+	.icon {
+		background: $grey-light;
+	}
+	svg {
+		fill: $white;
+	}
+	&:hover, &:focus {
+		.icon {
+			background: darken($grey-light, 10%);
+		}
+	}
+	&.disabled {
+		.icon {
+			background: tint($grey-light, 40%);
+			opacity: 1;
+		}
+	}
+}
+
+.btn-inline-icon {
+	svg {
+    fill: $primary-color-2-90;
+	}
+}
+
+
+//For lists that need hiding and showing
+.btn.btn-more-less { 
+	border:none;
+	background: none;
+	font-size: 10px;
+	color: $primary-color-2;
+	border-radius: 0;
+	margin-top: -10px;
+	padding: 0;
+	&:hover,
+	&:active {
+		color: $primary-color-1;
+	}
+	&:focus {
+		span {
+			text-decoration: none;
+		}
+	}
+	i {
+		margin-left: 0.3em;
+	}
+}
+
+// Checkboxes / toggles
+.toggle {
+	&__button {
+		&:after {
+			background-color: $primary-color-1;
+		}
+	}
+	&.option {
+		&--1 {
+			.toggle__label[data-toggle="option-1"] {
+				color: $primary-color-1;
+			}
+		}
+		&--2 {
+			.toggle__label[data-toggle="option-2"] {
+				color: $primary-color-1;
+			}
+		}
+	}
+}

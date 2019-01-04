@@ -1,0 +1,87 @@
+/*----------------------------------------------------------
+          Mobile Header
+ -----------------------------------------------------------*/
+
+.mobile-header {
+    @include mq($from: tb) {
+        display: none;
+    }
+    background-color: $white;
+    border-bottom: 1px solid $grey-light;
+    height: 60px;
+    .mobile-header__content {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        .content {
+            &__logo {
+
+            }
+            &__user-profile {
+
+                .user-image {
+                }
+            }
+            &__menu-button {
+                margin-right: 1.5em;
+            }
+        }
+    }
+}
+
+.mobile-nav {
+    // margin: 0;
+    // padding: 0;
+    list-style: none;
+    &.hide-menu {
+        height: 0;
+        @include transition($slow-ease);
+    }
+    &.show-menu {
+        background: $white;
+        position: relative;
+        z-index: 9999999; // TODO move to ZINDEX mixin
+        min-height: 100vh;
+        top: 0;
+        padding: 2em;
+    }
+    &__button {
+        margin-bottom: 0.7em;
+        padding-bottom: 0.5em;
+        &:not(:last-child) {
+            border-bottom: 1px solid $grey-light;
+        }
+        .nav-button--mobile-nav {
+            border: 0;
+            background-color: transparent;
+            padding: 0;
+            display: flex;
+            align-items: middle;
+        }
+        .nav-icon {
+            height: 35px;
+            width: 35px;
+            background-color: $primary-color-1;
+            border-radius: 50%;
+            margin-right: 1em;
+        }
+        .nav-link {
+            color: $text-color;
+            font-size: 150%;
+        }
+    }
+    &__sub-nav-mobile {
+        .sub-nav-mobile {
+            margin: 0 0 2em;
+            padding: 0;
+            list-style: none;
+            &__item {
+                margin-top: 0.6em;
+                a {
+                    color: $text-color;
+                    font-size: 140%;
+                }
+            }
+        }
+    }
+}

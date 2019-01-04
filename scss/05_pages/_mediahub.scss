@@ -1,0 +1,96 @@
+/*----------------------------------------------------------
+          Styles for the Media Hub
+ -----------------------------------------------------------*/
+
+.media-hub-body { //list of articles
+	margin-bottom: 2em;
+	.media-list-item {
+		margin-bottom: 2em;
+		.item-content {
+			@include transition($slow-ease);
+			max-height: 150px;
+		}
+	}
+	.item-category {
+		background: $primary-color-1;
+        color: $white;
+		padding: 1.6em;
+		text-transform: capitalize;
+		font-weight: 700;
+		margin-bottom: 2em;
+	}
+	h4 {
+		margin-bottom: 0.3em;
+	}
+	p.item-date {
+		font-size: 0.9em;
+		color: lighten($tertiary-color,30%);
+	}
+	.item-content {
+		margin-bottom: 1em;
+		overflow: hidden;
+		@include transition($fast-ease);
+		p {
+			text-align: justify;
+		}
+	}
+	.line {
+		position: relative;
+		li {
+			position: relative;
+			background: $white;
+			padding: 0 3em;
+		}
+		&:after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 7em;
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			pointer-events: none;
+			@include transition($slow-ease);
+			@include background($gradient-media-hub);
+		}
+		&:before {
+			content: '';
+			background: $primary-color-1;
+			display: block;
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			top: 20px;
+		}
+	}
+}
+
+.media-item {
+	&__header {
+		height: 7em;
+		width: 100%;
+		background-image: url("/images/diamonds.png");
+		background-color: $primary-color-1;
+	}
+	& .content-item {
+		padding: 0 $baseline*2 $baseline*2;
+		@include mq($until: tb) {
+			padding: 0;
+			padding-bottom: $baseline*2;
+		}
+		&__back-button {
+			padding: 1em 0;
+		}
+		&__title {
+			font-weight: 600;
+		}
+		&__date {
+			font-size: 0.9em;
+			color: lighten($tertiary-color,30%);
+		}
+		&__content {
+
+		}
+	}
+}

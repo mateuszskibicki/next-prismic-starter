@@ -1,0 +1,257 @@
+/*--------------------------------------------------------------------------------------------
+          Styles for the jobs search tool
+ --------------------------------------------------------------------------------------------*/
+
+
+ %search-tool--appearance {
+  background-color: $primary-color-1;
+  color: $text-color;
+  padding: 4px 0;
+}
+
+.search-tool {
+  &__title {
+    @extend %search-tool--appearance;
+  }
+  &__form {
+    @extend %search-tool--appearance;
+  }
+}
+
+.search-tool {
+  width: 100%;
+  z-index: 18; // TODO --- ad to Zindex mixin
+  &__controls {
+    position: absolute;
+    width: 100%;
+  }
+
+  .title {
+    color: $white;
+    font-family: $ff-OpenSans;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 1.8rem;
+  }
+
+  .form {
+    position: relative;
+    &__submit {
+      @include mq($from: tb) {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 4px;
+        @include mq($until: tb) {
+
+        }
+        @include mq($from: tb) {
+          top: 4px;
+
+        }
+      }
+    }
+  }
+
+  .form {
+    &--save-search {
+      background-color: darken($primary-color-1,20%);
+      color: $white;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5em;
+      min-width: 200px;
+      text-align: left;
+      @include mq($until: sph) {
+        top: 30px;
+      }
+      @include mq($from: sph) {
+        top: 36px;
+      }
+      &:before {
+        content: '';
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid darken($primary-color-1,20%);
+        position: absolute;
+        top: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      input {
+        color: $white;
+        border-radius: 0;
+        overflow: hidden;
+        height: auto;
+        outline: none;
+        font-size: 16px;
+        margin-bottom: 0.5em;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .btn {
+        .label {
+          font-weight: 400;
+        }
+      }
+
+      &.is--closed {
+        display: none;
+      }
+
+      &.is--open {
+        display: inline-block;
+      }
+    }
+  }
+
+  // -- Settings to space out fields and buttons in the form -- //
+  $padding-custom: 4px;
+  $line-height: 1.4;
+
+
+  .col--search {
+    input, .select__control, button {
+      margin-bottom: $padding-custom*2;
+      font-size: 16px;
+    }
+    button {
+      padding: 0.4em;
+    }
+    .select__menu {
+      border-radius: 0;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+      -webkit-text-fill-color: $white;
+      -webkit-box-shadow: 0 0 0px 1000px rgba($white,0.1) inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+    // &.click--on {
+    //   @include mq($from: sph, $until: dss ) {
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 0;
+    //   }
+    // }
+  }
+
+  .form-control, .select__control {
+    color: $white;
+    height: 2em;
+    line-height: $line-height;
+    border: none;
+    @include placeholder {
+      @include transition($fast-ease);
+    }
+  }
+
+  .select__placeholder, .select__clear {
+    color: rgba($white,0.8);
+    &:hover {
+      color: rgba($white,1);
+    }
+  }
+
+  .select.is-open {
+    .select__arrow {
+      border-bottom-color: rgba($white,1);
+    }
+  }
+
+  .select__arrow {
+    border-top-color: rgba($white,0.8);
+    &:hover {
+      border-top-color: rgba($white,0.8);
+    }
+    &:focus {
+
+    }
+  }
+  
+  .form-control, .select__control {
+    background-color: rgba($white,0.5);
+    border-radius: 0;
+    border: none;
+    // padding: 1.2em;
+    @include placeholder {
+      color: rgba($white,0.7);
+    }
+    
+    &:hover {
+      @include placeholder {
+        color: rgba($white,1);
+      }
+    }
+  }
+  .form-control {
+    padding: 1.2em;
+  }
+
+  .btn {
+    &--search {
+      padding: 6px 12px;
+      .label {
+        float: none;
+        width: 100%;
+        padding: 0;
+        line-height: $line-height;
+      }
+    }
+    &--tab {
+      border-radius: 0 0 $baseline/2 $baseline/2;
+      .label {
+        line-height: 1;
+      }
+    }
+    &--inline {
+      display: inline-block;
+    }
+    &--advanced {
+      background-color: $secondary-color;
+      color: $secondary-color-30;
+      &:hover {
+        background-color: darken($secondary-color,5%);
+      }
+    }
+    &--saved {
+      background-color: $crimson-red;
+      color: $white;
+      &:hover {
+        background-color: darken($crimson-red,10%);
+      }
+    }
+  }
+ }
+ 
+ .buttons--module { //These styles have to stay here as they are overriding default buttons style.
+  .btn--tab {
+    border-radius: 0;
+  }
+  li {
+    position: relative;
+  }
+  li:first-child {
+    .btn--tab {
+      border-radius: 0 0 0 $baseline/2;
+    }
+  }
+  li:last-child {
+    .btn--tab {
+      border-radius: 0 0 $baseline/2 0;
+    }
+  }
+  .icon i {
+    height: 14px;
+  }
+  @include mq($until: sph) {
+    .btn {
+      // font-size: 12px;
+      padding: 8px 14px;
+    }
+  }
+}

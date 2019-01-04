@@ -1,0 +1,270 @@
+/*--------------------------------------------------------------------------
+          Styles for the Common Elements on FORMS
+ --------------------------------------------------------------------------*/
+
+//TODO refactor this entire file. Lost of unused classes here!!
+ form {
+	.form-error {
+		font-weight: 700;
+		color: $alert-color;
+		text-align: center;
+		margin-right: 2em;
+		&.marketing-form {
+			font-size: 0.7em;
+			text-align: left;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+ }
+
+.form-group {
+	position: relative;
+	margin-bottom: 2em;
+	.input-error {
+		font-size: 0.8em;
+		font-weight: 700;
+		color: $alert-color;
+		position: absolute;
+		bottom: -1.5em;
+	}
+	&.helper-text {
+		padding-bottom: 1em;
+	}
+}
+
+
+.form-control,
+.field-box .select__control {
+	border-radius: 0;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	box-shadow: none;
+	background-color: $white;
+	height: 3em;;
+	font-size: $base-font-size;
+	&:hover,
+	&:focus,
+	&:active {
+		border: 0;
+		box-shadow: none;
+		border-bottom: 2px solid $primary-color-2;
+	}
+}
+
+
+.field-box-nolabel {
+	@extend .field-box;
+	label {
+		display: none;
+	}
+}
+
+.form-checkbox {
+	margin-bottom: 0.4em;
+	input {
+		margin-right: 0.3em;
+	}
+}
+
+.write-message {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+	textarea {
+		border: none;
+		height: auto;
+		min-height: 36px;
+	}
+	@include mq($until:mb) {
+		li {
+			display: block;
+			width: 100%;
+			.btn-full {
+				max-width: 120px;
+				margin: 0 auto;
+			}
+		}
+	}
+	@include mq($from:mb) {
+		li {
+			display: inline-block;
+			float: left;
+			&.textarea {
+				width: 80%;
+			}
+			&.submit {
+				padding-left: 1em;
+				width: 20%;
+			}
+		}
+	}
+}
+
+//Specific styles to fix forms styling
+.form-settings-basic {
+	.form-control {
+		input, button.rrui__select__selected {
+			border: none;
+			background-color: transparent;
+		}
+		&:hover {
+			border-color: $primary-color-2;
+			box-shadow: none;
+		}
+	}
+}
+
+/*----- Job Application Form ----*/
+
+.form-application {
+	.field-box {
+		input {
+			//width: 100%;
+		}
+		textarea {
+			//width: 100%;
+			min-height: 240px;
+		}
+	}
+}
+// -------- New standard form used on profile page --------- //
+.form-standard-profile {
+	label {
+		text-transform: uppercase;
+		color: lighten($tertiary-color,30%);
+	}
+	input, label {
+		font-size: 0.8em;
+	}
+	.checkbox-label {
+		font-size: 1em;
+		text-transform: none;
+	}
+	textarea {
+		height: 240px;
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	input:not([type="checkbox"]), textarea, .Select-control {
+		margin-bottom: 0.5em;
+		border: none;
+	}
+	input:not([type="checkbox"]), textarea {
+		padding: 0.6em 0.8em;
+		width: 100%;
+		outline: none;
+	}
+	input, textarea, .Select-control {
+		@include mq($until:sph) {
+			background: darken($white,5%);
+		}
+		@include mq($from:sph) {
+			background: darken($white,0%);
+		}
+	}
+	.Select-control {
+		input {
+			border-bottom: none;
+		}
+	}
+	.Select-menu-outer {
+		margin-top: 2px;
+	}
+	.buttons-left, .buttons-center, .buttons-right {
+		margin-top: 1em;
+	}
+}
+
+/*------- Form Validation ---------*/
+
+input.form-control,
+.react-phone-number-input.form-control {
+	&.error-field {
+		border: 1px solid lighten($primary-color-2, 12%);
+		background: url(/images/icons/form-error.png) 98% 9px no-repeat lighten($primary-color-2, 32%);
+	}
+	&.approved-field {
+		border: 1px solid lighten($earls-green, 29%);
+		background: url(/images/icons/form-ok.png) 98% 9px no-repeat lighten($earls-green, 39%);
+	}
+}
+
+.form-control.error-field > input {
+	border: 1px solid lighten($primary-color-2, 12%);
+	background: url(/images/icons/form-error.png) 98% 9px no-repeat lighten($primary-color-2, 32%);
+}
+
+.form-control.approved-field > input {
+	border: 1px solid lighten($earls-green, 29%);
+	background: url(/images/icons/form-ok.png) 98% 9px no-repeat lighten($earls-green, 39%);
+}
+
+.error-field > .Select-control{
+	border: 1px solid lighten($primary-color-2, 12%);
+	background: url(/images/icons/form-error.png) 98% 9px no-repeat lighten($primary-color-2, 32%);
+}
+.approved-field > .Select-control {
+	border: 1px solid lighten($earls-green, 9%);
+	background: url(/images/icons/form-ok.png) 98% 9px no-repeat lighten($earls-green, 39%);
+}
+
+//Profile Errors
+
+.form-standard-profile {
+	.show-error {
+		label {
+			color: $primary-color-2;
+		}
+		input {
+			border-color: $primary-color-2;
+		}
+	}
+}
+
+
+// ------- Checkboxes --------- //
+
+.form-checkbox {
+	input, label {
+		display: inline-block;
+		width: auto;
+	}
+}
+
+
+//----- Settings Pages  ----//
+
+.field-box {
+	margin-bottom: 1.2em;
+}
+
+
+//----- Corporate Pages on Marketing Site Specific Form  ----//
+
+.form-corporate {
+	h3.title {
+		color: $primary-color-2;
+		margin: 0;
+		margin-bottom: 1rem;
+	}
+	.form-corporate {
+		&__button {
+			margin: 1.5em 0 1.5em;
+		}
+		&__contact-details {
+			.contact-details {
+				margin-bottom: 2.5em;
+				p, a {
+					color: $text-color;
+					font-size: 0.9em;
+					font-weight: 700;
+					margin-bottom: 0.8em;
+				}
+			}
+		}
+	}
+}

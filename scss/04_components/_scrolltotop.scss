@@ -1,0 +1,85 @@
+/*--------------------------------------------------------------------------
+          Styles for the scroll to top button
+ --------------------------------------------------------------------------*/
+ 
+@keyframes scroll-top-bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+}
+.scroll-top {
+  .scroll-top-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $primary-color-2;;
+    -webkit-border-top-left-radius: $border-radius * 2;
+    -moz-border-top-left-radius: $border-radius * 2;
+    border-top-left-radius: $border-radius * 2;
+    -webkit-border-top-right-radius: $border-radius * 2;
+    -moz-border-top-right-radius: $border-radius * 2;
+    border-top-right-radius: $border-radius * 2;
+    font-size: $baseline;
+    @include mq($until: mb) {
+      .scroll-top-text {
+        display: none;
+      }
+      .scroll-top-arrow {
+        left: 48%;
+        right: auto;
+        -webkit-animation: scroll-top-bounce 2s infinite;
+        -moz-animation: scroll-top-bounce 2s infinite;
+        -o-animation: scroll-top-bounce 2s infinite;
+        animation: scroll-top-bounce 2s infinite;
+      }
+    }
+    @include mq($from: mb) {
+      width: 48px;
+      height: 36px;
+      padding: 2px 19px;
+      right: auto;
+      left: 48%;
+      color: $white;
+      .scroll-top-arrow {
+        padding-top: 8px;
+      }
+      .scroll-top-text {
+        opacity: 0;
+      }
+        &:hover {
+          -webkit-transition: .5s;
+          -moz-transition: .5s;
+          -o-transition: .5s;
+          -ms-transition: .5s;
+          transition: .5s;
+          width: 150px;
+          width: 150px;
+          left: 45%;
+          .scroll-top-text {
+            opacity: 1;
+            font-size: $base-font-size;
+            padding-left: 12px;
+          }
+          .scroll-top-arrow {
+            -webkit-animation: scroll-top-bounce 1s;
+            -moz-animation: scroll-top-bounce 1s;
+            -o-animation: scroll-top-bounce 1s;
+            animation: scroll-top-bounce 1s;
+          }
+        }
+      }
+    }
+  }
+

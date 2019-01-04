@@ -1,0 +1,79 @@
+/*--------------------------------------------------------------------------------------------
+                         Marketing site Footer Styles
+ --------------------------------------------------------------------------------------------*/
+
+.footer {
+    background-color: $primary-color-1;
+    color: $white;
+    padding: 2em 0;
+    .footer-container {
+        .hr-footer {
+            border-top: 1px solid $white;
+        }
+        .links {
+            .links-list {
+                list-style: none;
+                // padding: 0;
+                margin: 0;
+                margin-bottom: 3em;
+                &__heading {
+                    font-family: $ff-Montserrat;
+                    color: $white;
+                    text-decoration: underline;
+                }
+                &__item {
+                    color: $white;
+                    font-size: 0.8em;
+                    }
+                    li {
+                    &:first-child {
+                        margin-bottom: 1em;
+                    }
+                }
+            }
+        }
+        .contact {
+            @include mq($until: tb ) {
+                text-align: center;
+            }
+            display: flex;
+            align-items: baseline;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            &__address {
+                p {
+                font-size: 0.7em;
+                margin-bottom: 0;
+                }
+            }
+            &__social-icons {
+                //text-align: right;
+                margin-top: 0.5rem;
+                color: $white;
+                i {
+                    color: $white;
+                    font-size: 1.5rem;
+                    margin-left: 1rem;
+                }
+            }
+        }
+        .policy {
+            @include mq($until: tb ) {
+                text-align: center;
+            }
+            .policy__list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                .policy__item {
+                    display: inline;
+                    margin-right: 2em;
+                    a {
+                        color: $white;
+                        font-size: 0.7em;
+                    }
+                }
+            }
+        }
+    }
+}

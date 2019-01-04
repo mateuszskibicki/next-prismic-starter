@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------------------------------------
+          Styles for the documents page
+ --------------------------------------------------------------------------------------------*/
+
+.document-body {
+  margin-bottom: 2em;
+}
+
+.documents-list {
+  margin: 2em 0;
+}
+.document-item {
+  @extend .tile-item;
+  border: 1px solid $grey-light;
+  @include transition($fast-ease);
+  h5 {
+    font-size: 1em;
+  }
+  .tile-info-box {
+    height: 160px;
+  }
+  .tile-background-image {
+    background: $grey-light url('/images/bg-documents-default.jpg') center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 160px;
+  }
+}

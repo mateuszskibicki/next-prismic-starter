@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------------------
+          Styles for all the homepages
+ --------------------------------------------------------------------------*/
+
+/*------ Homepage Slider Images -------*/
+
+.mpu-ad {
+  @include mq($from: 451px) {
+    display: none !important;
+  }
+}
+
+.small-ad {
+  @include mq($until: 450px) {
+    display: none !important;
+  }
+  @include mq($from: 729px) {
+    display: none !important;
+  }
+}
+
+.large-ad {
+  @include mq($until: 728px) {
+    display: none !important;
+  }
+}

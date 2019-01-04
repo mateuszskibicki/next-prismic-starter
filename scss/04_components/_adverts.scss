@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------------------
+          Styles for the Adverts
+ --------------------------------------------------------------------------*/
+.slider-ads-top {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+.slider-ads-bottom {
+	margin-top: 2em;
+}
+.adverts {
+  margin-left: auto;
+  margin-right: auto;
+  a {
+    display: block;
+  }
+  img {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+  @include mq($until: piad) {
+    .md, .lg {
+      display: none;
+    }
+  }
+  @include mq($from: piad, $until: sph) {
+    .sm, .lg {
+      display: none;
+    }
+  }
+  @include mq($from: sph) {
+    max-width: 2560px;
+    .sm, .md {
+      display: none;
+    }
+  }
+}
+
+.info-ads {
+  overflow: hidden;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 1em;
+  .subtitle {
+    text-transform: uppercase;
+    font-size: 12px;
+    height: inherit;
+  }
+  a.intouchads {
+    height: inherit;
+    span {
+      padding: 0;
+    }
+    .label {
+      color: lighten($tertiary-color,30%);
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+    .icon {
+      height: 20px;
+      img {
+        height: 14px;
+        width: 14px;
+      }
+    }
+    &:hover, &:focus {
+      .label {
+        color: $primary-color-1;
+      }
+    }
+  }
+}

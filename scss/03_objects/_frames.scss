@@ -1,0 +1,116 @@
+/*----------------------------------------------------------
+          Styles for all multiple frames
+ -----------------------------------------------------------*/
+
+
+.frame {
+  position: relative;
+  border: 1px solid;
+}
+.frame-2 {
+  @extend .frame;
+  &:before, &:after {
+    border: inherit;
+    position: absolute;
+    z-index: 0;
+  }
+  &:before {
+    content: '';
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+}
+.frame-3 {
+  @extend .frame-2;
+  &:after {
+    content: '';
+    top: 9px;
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+  }
+}
+
+.frame-t4 {
+  border: 4px solid;
+}
+/////////////////////////////////////////////////////
+
+@mixin frame(){
+  position: relative;
+  border: 1px solid;
+}
+@mixin frame-2(){
+  @include frame();
+  &:before, &:after {
+    border: inherit;
+    position: absolute;
+    z-index: 0;
+  }
+  &:before {
+    content: '';
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+}
+@mixin frame-3(){
+  @include frame-2();
+  &:after {
+    content: '';
+    top: 9px;
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+  }
+}
+
+@mixin frame-t4(){
+  border: 4px solid;
+}
+
+.frame-wrapper {
+  padding-top: 1em;
+}
+.frame-title {
+  border: 1px solid;
+  border-top: none;
+  padding: 2em;
+  position: relative;
+  .title-top {
+    width: 100%;
+    height: 2em;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+    span {
+      position: absolute;
+      padding: 0 1em;
+      left: 1em;
+      @include mq($until:sph) {
+        padding: 0 0.5em;
+      }
+      &:before, &:after {
+        content: '';
+        width: 2000px;
+        display: block;
+        border-top: 1px solid;
+        position: absolute;
+        top: 0.5em;
+      }
+      &:before {
+        left: 100%;
+      }
+      &:after {
+        right: 100%;
+      }
+    }
+  }
+}
+
+

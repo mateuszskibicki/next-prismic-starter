@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------------------------------------
+                         Marketing site Information Tile Styles
+ --------------------------------------------------------------------------------------------*/
+
+
+.marketing-tile {
+    &--image-right,
+    &--image-left {
+        display: flex;
+        .title {
+            margin-bottom: 1.85714rem;
+        }
+    }
+    &--image-right {
+        .tile {
+            &__text {
+                order: 1;
+            }
+            &__image {
+                order: 2;
+            }
+            @include mq($until: sph) {
+                &__text {
+                    order: 2;
+                }
+                &__image {
+                    order: 1;
+                }
+            }
+        }
+    }
+    &--image-left {
+        .tile {
+            &__text {
+                order: 2;
+            }
+            &__image {
+                order: 1;
+            }
+        }
+    }
+}

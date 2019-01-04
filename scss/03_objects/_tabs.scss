@@ -1,0 +1,32 @@
+/*--------------------------------------------------------------------------------------------
+                          Styles for all tabs
+ --------------------------------------------------------------------------------------------*/
+
+// FAQ tabs (not currently live)
+li a.current {
+    background-color: $primary-color-1;
+    color: white;
+}
+
+.help-text {
+    li button.current {
+        background-color: $primary-color-2;
+        color: white;
+    }
+}
+
+// Settings Tabs
+
+.account-settings, //TODO collate together with settings and account
+.account-help {
+    li {
+        a {
+            &:hover {
+                color: $primary-color-2;
+            }
+            &.active-tab {
+                border-color: $primary-color-2;
+            }
+        }
+    }
+}

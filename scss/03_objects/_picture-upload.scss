@@ -1,0 +1,70 @@
+// -------- COMMON SETTINGS FOR PICTURE UPLOAD FOR THEMES -------- //
+
+// Input covers entire avatar
+
+.profile-edit-picture {
+  height: 100%;
+  background-color: rgba(#000,0.1);
+  @include border-radius(50%);
+  @include transition($fast-ease);
+  input[type=file] {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+    @include transition($fast-ease);
+  }
+  span {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    @include transition($fast-ease);
+  }
+  svg {
+    fill: rgba($white,0.8);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    @include transition($fast-ease);
+    width: 2em;
+    height: 2em;
+  }
+  &:hover {
+    background-color: rgba(#000,0.4);
+    span {
+      width: 100%;
+      height: 100%;
+    }
+    svg {
+      width: 4em;
+      height: 4em;
+    }
+  }
+}
+
+.modal {
+  &[title="Crop It"], &[role="dialog"] {
+    z-index: 111111111111111111111;
+    background-color: rgba($black,0.5);
+    .modal-content {
+      background-color: $white;
+    }
+    .modal-body {
+      padding: 2em;
+    }
+    .AvatarCropper-canvas {
+      canvas, input[name="zoom"] {
+        width: 100% !important;
+      }
+    }
+  }
+}

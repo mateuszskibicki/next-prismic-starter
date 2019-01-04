@@ -1,0 +1,156 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+
+/*-------- Tints and Shades */
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+/*----- Stop repetition for cross borwser support -------*/
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+@mixin background($gradient) {
+	background: -webkit-linear-gradient($gradient);
+	background:    -moz-linear-gradient($gradient);
+	background: 	   -o-linear-gradient($gradient);
+	background: 		    linear-gradient($gradient);
+}
+@mixin background-gradient($gradient) {
+	background: -webkit-($gradient);
+	background:    -moz-($gradient);
+	background: 	   -o-($gradient);
+	background: 		    ($gradient);
+}
+
+@mixin box-shadow($horizonatal, $vertical, $blur, $spread, $color) {
+	-webkit-box-shadow:$horizonatal $vertical $blur $spread $color;
+	-moz-box-shadow:$horizonatal $vertical $blur $spread $color;
+	box-shadow:$horizonatal $vertical $blur $spread $color;
+}
+
+@mixin translate($valueX, $valueY) {
+	-webkit-transform: translate($valueX, $valueY);
+	-ms-transform: translate($valueX, $valueY);
+	transform: translate($valueX, $valueY);
+}
+@mixin translateY($value) {
+	-webkit-transform: translateY($value);
+	-ms-transform: translateY($value);
+	transform: translateY($value);
+}
+@mixin translateX($value) {
+	-webkit-transform: translateX($value);
+	-ms-transform: translateX($value);
+	transform: translateX($value);
+}
+
+/*----- Reset Lists -----*/
+@mixin list-reset(){
+	padding: 0;
+	margin: 0;
+	list-style: none;
+  }
+
+/*--------- Style background images ---------------*/
+@mixin background-image($image, $background-position, $background-repeat, $background-size) {
+	background: $image $background-position $background-repeat;
+	background-size: $background-size;
+}
+@mixin background-color-and-image($color, $image, $background-position, $background-repeat, $background-size) {
+	background: $color $image $background-position $background-repeat;
+	background-size: $background-size;
+}
+
+@mixin bg-blend($gradient, $image, $blend-mode,
+$background-position, $background-repeat, $background-size,
+$cover-color, $transparency) {
+	@include mq($until:piad) {
+		background: $image $background-position, $background-repeat;
+		background-size: $background-size;
+		box-shadow: inset 1600px 0 rgba(saturate(darken($cover-color,20%),40%),$transparency);
+	}
+	@include mq($from:piad) {
+		background-image: $gradient, $image;
+		background-position: $background-position;
+		background-repeat: $background-repeat;
+		background-blend-mode: $blend-mode;
+		background-size: $background-size;
+		@media screen\0 {
+			background: $image $background-position, $background-repeat;
+			background-size: $background-size;
+			box-shadow: inset 1600px 0 rgba(saturate(darken($cover-color,20%),40%),$transparency);
+		}
+		@supports (-ms-ime-align:auto) {
+			background: $image $background-position, $background-repeat;
+			background-size: $background-size;
+			box-shadow: inset 1600px 0 rgba(saturate(darken($cover-color,20%),40%),$transparency);
+		}
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background: $image $background-position, $background-repeat;
+			background-size: $background-size;
+			box-shadow: inset 1600px 0 rgba(saturate(darken($cover-color,20%),40%),$transparency);
+		}
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&::-moz-placeholder          {@content}
+	&:-moz-placeholder           {@content}
+	&:-ms-input-placeholder      {@content}
+	&::placeholder      				 {@content}
+}
+
+/*---------- scale and rotate objects ----------*/
+@mixin transform($direction, $value) {
+	-webkit-transform: $direction+unquote('(') + $value + unquote(')');
+		 -moz-transform: $direction+unquote('(') + $value + unquote(')');
+			 -o-transform: $direction+unquote('(') + $value + unquote(')');
+					transform: $direction+unquote('(') + $value + unquote(')');
+}
+
+
+
+@mixin translate($valueX, $valueY) {
+	-webkit-transform: translate($valueX, $valueY);
+	-ms-transform: translate($valueX, $valueY);
+	transform: translate($valueX, $valueY);
+}
+
+// ---------- THEME mixins ---------- //
+
+@mixin columns-text($columns, $gap) {
+	-webkit-column-count: $columns;
+		 -moz-column-count: $columns;
+				column-count: $columns;
+        -webkit-column-gap: $gap;
+           -moz-column-gap: $gap;
+                column-gap: $gap;
+}

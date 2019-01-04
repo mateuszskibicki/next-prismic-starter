@@ -1,0 +1,235 @@
+/*--------------------------------------------------------------------------------------------
+                          Styles for the jobs general
+ --------------------------------------------------------------------------------------------*/
+
+
+.jobs-body {
+  &__aside {
+    width: 100%; // Keeps the width for element, when it has position absolute or fixed.
+  }
+}
+
+
+// ---- My applications ---- //
+
+.applications {
+  &--my-applications, &--external {
+    .table--jobs {
+      margin: 2em 0 4em;
+    }
+  }
+}
+
+
+// ---- Saved jobs ---- //
+
+.jobs-list {
+  &--saved {
+    margin-bottom: 2em; // Todo REF
+  }
+}
+
+
+// ---- Tables ---- //
+
+.table--jobs {
+  .table {
+    &__header {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid $grey-light;
+
+      .header {
+        font-family: $ff-OpenSans;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin: 0;
+
+      }
+    }
+    &__body {
+      margin-bottom: 2em;
+    }
+    &__row {
+      border-bottom: 1px solid $grey-light;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+
+// ---- Styling for all elements in job tables (saved searches, favourites jobs,  my applications ---- //
+
+.manage-jobs-item {
+  &__summary, &__main {
+    padding: 0.7rem 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    color: lighten($tertiary-color,20%);
+    .main__date {
+      &--expired {
+        color: lighten($tertiary-color,40%);
+        i {
+          top: 2px;
+        }
+        .date__info {
+          text-decoration: line-through;
+        }
+      }
+    }
+    @include mq($from: tb) {
+      .date__label, .date__info {
+        display: block;
+      }
+
+    }
+  }
+  .summary, .main {
+    &__name, &__date {
+      display: block;
+      padding: 0.4em 0;
+      line-height: 1.4;
+    }
+  }
+  .btn-toggle {
+    margin-top: 10px;
+    float: left;
+  }
+  &__details {
+    overflow: hidden;
+    @include transition($slow-ease);
+    &.item-collapsed {
+      max-height: 0;
+    }
+    &.item-uncollapsed {
+      max-height: 500px;
+    }
+    .details {
+      &__body {
+        padding: 1.4rem 1rem 0.7rem;
+        background-color: darken($white,3%);
+        font-size: 0.8rem;
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          border-top: 10px solid $white;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          position: absolute;
+          top: 0;
+          left: 15px;
+        }
+      }
+      &__header {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        margin: 0 0 0.4em;
+        font-family: $ff-OpenSans;
+      }
+      &__info {
+        @include mq($until: sph) {
+          margin-bottom: 1.4em;
+        }
+        @include mq($from: sph, $until: tb) {
+          margin-bottom: 1.4em;
+          &:nth-last-child(1), &:nth-last-child(2) {
+            margin-bottom: 0;
+          }
+        }
+        @include mq($from: tb, $until: dsm) {
+          margin-bottom: 1.4em;
+          &:nth-last-child(1), &:nth-last-child(2), &:nth-last-child(3) {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &__keyword {
+        margin-bottom: 1em;
+        padding: 0 0 1em;
+        //border-bottom: 2px dotted $white;
+        .details__value {
+          font-size: 1.2em;
+          color: $primary-color-1;
+        }
+      }
+    }
+  }
+}
+
+// -- Responsive modifications for elements in jobs tables -- //
+
+.manage-jobs-item {
+  .col {
+    &--more-info, &--run-search {
+      .btn {
+        display: block;
+        width: 100%;
+      }
+    }
+    &--more-info {
+      .icon {
+        float: right;
+      }
+    }
+  }
+  @include mq($until: tb) {
+    .main__name {
+      font-size: 1.2em;
+    }
+    .main__salary {
+      margin-bottom: 0.8em;
+    }
+    .col {
+      &--run-search, &--date, &--status {
+        margin-bottom: 1em;
+      }
+      &--more-info {
+        .icon {
+          float: right;
+        }
+      }
+    }
+  }
+  @include mq($from: tb) {
+    .btn {
+      float: right;
+    }
+  }
+}
+
+
+
+// -- Jobs - misc -- //
+
+.status-update {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    float: left;
+  }
+  &__input {
+    width: 75%;
+  }
+  &__button {
+    width: 25%;
+    .btn, .label {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .Select-control {
+    @include border-radius(2px 0 0 2px);
+  }
+  .btn-small-solid-brand {
+    @include border-radius(0 2px 2px 0 !important);
+    padding: 0;
+    .label {
+      line-height: 34px;
+      height: 34px;
+    }
+  }
+}

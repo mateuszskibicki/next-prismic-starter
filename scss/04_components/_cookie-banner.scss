@@ -1,0 +1,27 @@
+.cookie-banner {
+    background-color: $alabaster-white;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 999999;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .15);
+    border-top: 3px solid rgba($pomegranate, .7);
+    animation: cookie-banner-animation 1s;
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__link {
+        font-weight: 700;
+    }
+}
+
+@keyframes cookie-banner-animation {
+    from {bottom: -300px}
+    to {bottom: 0}
+  }

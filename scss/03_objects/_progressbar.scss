@@ -1,0 +1,33 @@
+// ------------------------------------------------------ \\
+// Profile completion bar styles
+// ------------------------------------------------------ \\
+
+.profile-completion {
+    background-color: darken($white,5%);
+    .profile-completion__container {
+        .profile-complete__col {
+            position: relative;
+            .profile-completion__mouse-area {
+                padding: 2em 0;
+                .profile-completion__heading {
+                    text-align: right;
+                    font-weight: 600;
+                }
+                .profile-completion__progressBar {
+                    span {
+                        display: inline-block;
+                        height: 15px;
+                        &.completed {
+                            background-color: $primary-color-2;
+                            // width style inline
+                        }
+                        &.incomplete {
+                            background-color: $white;
+                            // width style inline
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

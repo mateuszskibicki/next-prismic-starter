@@ -1,0 +1,478 @@
+/*--------------------------------------------------------------------------
+          Styles for Promo Pages
+ --------------------------------------------------------------------------*/
+
+.line-brand { // mm - create separate sass file with decoration elements and move this one there
+	.brand-dot {
+		position: relative;
+		img {
+			display: block;
+			width: 100%;
+		}
+		&:before, &:after {
+			content: '';
+			display: block;
+			height: 2px;
+			position: absolute;
+			background: $white;
+			@include border-radius(1px);
+		}
+	}
+	@include mq($until:sph) {
+		$line-length: 80px;
+		$dot-size: 32px;
+		width: $dot-size;
+		height: $dot-size;
+		margin: 0 auto $dot-size/4;
+		.brand-dot {
+			&:before, &:after {
+				width: $line-length;
+				top: $dot-size/2;
+			}
+			&:before {
+				left: $line-length*(-1) - 20px;
+			}
+			&:after {
+				right: $line-length*(-1) - 20px;
+			}
+		}
+	}
+	@include mq($from:sph) {
+		$line-length: 136px;
+		$dot-size: 46px;
+		width: $dot-size;
+		height: $dot-size;
+		margin: 0 auto $dot-size/4;
+		.brand-dot {
+			&:before, &:after {
+				width: $line-length;
+				top: $dot-size/2;
+				
+			}
+			&:before {
+				left: $line-length*(-1) - 20px;
+			}
+			&:after {
+				right: $line-length*(-1) - 20px;
+			}
+		}
+	}
+}
+
+.cover-dark-grey { // TODO -helpers?? move this file somewhere
+	background: rgba(#3F3F3F,0.7);
+	width: 100%;
+	height: 100%;
+}
+
+.cover-promos {
+	width: 100%;
+	height: 100%;
+}
+
+
+.promospage-body {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	//@include background-image($bg-promo-business-talk, center, no-repeat, cover);
+	//z-index: 2147483639;
+	z-index: 9999999999;
+	.close {
+		width: 48px;
+		height: 48px;
+		line-height: 48px;
+		text-align: center;
+		position: fixed;
+		top: 0;
+		right: 0;
+		//z-index: 9999999;
+		z-index: 99999999999;
+		i.fa {
+			margin: 0;
+		}
+	}
+	.promos-page-header {
+		text-align: center;
+		line-height: 1;
+		h2, h3, h4, p {
+			line-height: 1.2;
+		}
+		h2 {
+			margin-bottom: 0.4em;
+		}
+		h3 {
+			font-weight: 500;
+			margin-bottom: 0;
+		}
+		h4.personal-offer {
+			color: $primary-color-1;
+			font-weight: 300;
+		}
+		.hr-promo {
+			color: $white;
+			width: 50%;
+		}
+		@include mq($until:sph) {
+			margin-top: $baseline*2.4;
+			h2 {
+				font-size: 1.3em;
+			}
+			h4.personal-offer {
+				font-size: 24px;
+				margin-bottom: 0.4em;
+			}
+			h3 {
+				font-size: 18px;
+			}
+		}
+		@include mq($from:sph, $until:tb) {
+			margin-top: $baseline * 2;
+			h4.personal-offer {
+				font-size: 40px;
+			}
+			h3 {
+				font-size: 20px;
+			}
+		}
+		@include mq($from:tb) {
+			margin-top: $baseline * 3;
+			h4.personal-offer {
+				font-size: 50px;
+			}
+			h3 {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+.logo-top-right {
+	position: absolute;
+	width: auto;
+	top: 0;
+	left: 0;
+	@include mq($until:sph) {
+		padding: 8px;
+		height: 48px;
+	}
+	@include mq($from:sph, $until:tb) {
+		padding: $baseline/2;
+		height: $baseline*2;
+	}
+	@include mq($from:tb) {
+		padding: $baseline;
+		height: $baseline*4;
+	}
+	
+}
+
+.promo-blocks {
+	position: relative;
+	margin: 0 auto;
+	padding: 0 1em;
+	@include mq($until:sph) {
+		max-width: 320px;
+	}
+	@include mq($from:sph, $until:tb) {
+		max-width: 600px;
+	}
+	@include mq($from:tb) {
+		max-width: 680px;
+	}
+}
+
+.promo-item {
+	border: 2px solid lighten($tertiary-color, 30%);
+	background: $white;
+	color: lighten($tertiary-color, 30%);
+	.light-grey {
+		color: lighten($tertiary-color, 30%);
+	}
+	h1, p {
+		line-height: 1;
+	}
+	h1 {
+		margin: 0 0 0.3em;
+	}
+	.uppercase-space {
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		margin-right: -0.2em;
+	}
+	p.networks {
+		@extend .uppercase-space;
+	}
+	p.networks, .vat-info {
+		@include mq($until:sph) {
+			margin-bottom: 1em;
+		}
+		@include mq($from:sph) {
+			margin-bottom: 3em;
+		}
+	}
+	.price-box {
+		position: relative;
+		margin: 0 auto 0.1em;
+		.price {
+			display: inline-block;
+			position: relative;
+			font-weight: 900;
+			padding-left: 0.4em;
+			.currency {
+				font-weight: 700;
+				//color: $primary-color-1; // moved to _thisTheme
+				position: absolute;
+				top: 0.1em;
+				left: 0;
+				display: block;
+			}
+		}
+	}
+	p.title-type-of-offer {
+		@extend .uppercase-space;
+		font-size: 12px;
+		position: relative;
+		margin: 0 0 1em;
+	}
+	.vat-info {
+		font-weight: 400;
+		font-size: 0.9em;
+	}
+	.price-regular {
+		@extend .price-box;
+		.title-type-of-offer {
+			margin: 0;
+		}
+		.price {
+			font-size: 30px;
+			line-height: 30px;
+			.currency {
+				font-size: 20px;
+				bottom: 10px;
+				line-height: 20px;
+			}
+		}
+	}
+	.price-promoted {
+		@extend .price-box;
+		.title-type-of-offer {
+			overflow: hidden;
+			span {
+				display: inline-block;
+				position: relative;
+				padding: 0 1em;
+				&:before, &:after {
+					position: absolute;
+					content: '';
+					display: block;
+					width: 300px;
+					height: 1px;
+					background: $tertiary-color;
+					top: 6px;
+				}
+				&:before {
+					left: 100%;
+				}
+				&:after {
+					right: 100%;
+				}
+			}
+		}
+		@include mq($until:sph) {
+			$ratio: 0.6;
+			.price {
+				font-size: 50px*$ratio;
+				line-height: 50px*$ratio;
+				.currency {
+					font-size: 30px*$ratio;
+					bottom: 20px*$ratio;
+					line-height: 30px*$ratio;
+				}
+			}
+		}
+		@include mq($from:sph) {
+			.price {
+				font-size: 50px;
+				line-height: 50px;
+				.currency {
+					font-size: 30px;
+					bottom: 20px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+}
+
+
+.promoted-item-left, .promoted-item-right {
+	position: absolute;
+	margin-top: 60%;
+	padding: 3em 1em;
+	h1 {
+		font-size: 26px;
+	}
+	p, .networks {
+		font-size: $base-font-size/2;
+	}
+	.price {
+		opacity: 0.5;
+	}
+	@include mq($until: mb) {
+		display: none;
+	}
+}
+.promoted-item-left {
+	@include border-radius($border-radius*4 0 0 $border-radius*4);
+	right: -2px;
+}
+
+.promoted-item-right {
+	@include border-radius(0 $border-radius*4 $border-radius*4 0);
+	
+	left: -2px;
+}
+
+.promoted {
+	border: 2px solid $tertiary-color;
+	background: $primary-color-1;
+	color: $tertiary-color;
+	position: relative;
+	z-index: 9999999;
+	@include border-radius($border-radius*4);
+	@include mq($until: mb) {
+		top: 13px; //?
+	}
+	.price-regular {
+		.price {
+			color: darken(saturate($primary-color-1,20%),20%);
+			font-weight: 700;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: relative;
+			top: -20px;
+			width: 120px;
+			margin: 0 auto;
+			border-top: 1px solid #4d4d4d;
+			-webkit-transform: rotate(-32deg); /* Chrome, Safari, Opera */
+			-ms-transform: rotate(-32deg); /* IE 9 */
+			transform: rotate(-32deg);
+		}
+	}
+	@include mq ($until:sph) {
+		padding: 1.4em 1em;
+		.price-regular {
+			margin-top: 12%;
+			margin-bottom: 5%;
+		}
+		h1 {
+			font-size: 38px;
+		}
+	}
+	@include mq ($from:sph) {
+		padding: 2em;
+		.price-regular {
+			margin-top: 20%;
+			margin-bottom: 15%;
+		}
+		h1 {
+			font-size: 58px;
+		}
+	}
+}
+
+// ALLLLLL
+.promospage-body {
+	.icon-product {
+		display: block;
+		width: 100%;
+		max-width: 120px;
+		margin: 1em auto;
+	}
+	.title-uppercase {
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		text-align: center;
+	}
+	.credentials {
+		margin: 0 auto;
+		img {
+			width: 100%;
+		}
+	}
+	.logo-dot {
+		display: block;
+		width: 50px;
+		height: 50px;
+		margin: 0 auto 1em;
+	}
+	.price-regular {
+		//&:after {
+		//	content: '';
+		//	display: block;
+		//	position: relative;
+		//	top: -20px;
+		//	width: 120px;
+		//	margin: 0 auto;
+		//	border-top: 1px solid #4d4d4d;
+		//	-webkit-transform: rotate(-32deg); /* Chrome, Safari, Opera */
+		//	-ms-transform: rotate(-32deg); /* IE 9 */
+		//	transform: rotate(-32deg);
+		//
+		//}
+	}
+	.price-promoted {
+	
+	}
+}
+///Themes ITN
+.offer-ITN {
+	@include background-image($bg-promo-business-talk, center, no-repeat, cover);
+	line-height: 1;
+	.cover-promos {
+        background: rgba(#3F3F3F, 0.7);
+    }
+    .promos-page-header {
+        h3,
+        h2,
+        p {
+            color: $white;
+        }
+        h4.personal-offer {
+            color: $primary-color-1;
+        }
+        .line-brand {
+            .brand-dot {
+                &:before,
+                &:after {
+                    background: $white;
+                }
+            }
+        }
+    }
+    .promo-blocks {
+        .price-regular {
+            .currency {
+                color: $primary-color-1;
+            }
+        }
+        .price-promoted {
+            .currency {
+                color: $white;
+            }
+        }
+    }
+}
+
+.frame-brand {
+    border-color: $primary-color-1;
+}
+
+.frame-picture {
+    border-color: $white;
+}

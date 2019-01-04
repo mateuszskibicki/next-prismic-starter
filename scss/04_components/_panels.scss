@@ -1,0 +1,159 @@
+/*--------------------------------------------------------------------------
+          Styles for all panel layouts
+ --------------------------------------------------------------------------*/
+
+
+// Panels at the bottom of the business services pages
+.panels {
+    margin-top: 3em;
+    .panel-content {
+        // height: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        padding: 4em 3em;
+        @include mq($from: mb, $until: tb) {
+            padding: 2em 2em;
+        }
+        @include mq($from: piad, $until: mb) {
+            padding: 2em 2em;
+        }
+        .panel {
+            &__description {
+            p {
+                margin-bottom: 1rem;
+                font-size: 0.95rem;
+            }
+            }
+        }
+    }
+}
+
+// Panels in the resources page
+.panel-grid {
+    margin: 2em 0 3em 0;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px 300px;
+    @include mq($until: sph) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: 250px 250px;
+    }
+    .panel-grid__item {
+        @include mq($from: dss) {
+            &--2-1 {
+                grid-area: 1 / 1 / 1 / 3;
+            }
+            &--2-2 {
+                grid-area: 3 / 2 / 3 / 4;
+            }
+        }
+        &--2-1 {
+            .panel-magazine {
+                .panel-magazine {
+                    &__text {
+                        padding: 2em;
+                        position: relative;
+                        .title {
+                            line-height: 1.25;
+                        }
+                        .link {
+                            position: absolute;
+                            bottom: 2em;
+                            left: 2em;
+                        }
+                    }
+                    &__image {
+                        padding: 2em;
+                        height: 300px;
+                        @include mq($until: sph) {
+                            height: 250px;
+                        }
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: contain;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+    .panel-resources,
+    .panel-twitter {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0.2));
+        padding: 1em;
+        position: relative;
+        color: $primary-color-2;
+        .title-section {
+            margin: 0 0 1em;
+            text-transform: uppercase;
+            font-size: 85%;
+        }
+        .date {
+            margin:0;
+            font-size: 75%;
+        }
+        .title {
+            line-height: 1.25;
+            @include mq($from: dss) {
+                font-size: 1.5rem;
+            }
+        }
+        .link {
+            position: absolute;
+            bottom: 2em;
+            right: 2em;
+        }
+    }
+    .panel-twitter {
+        text-align: center;
+        .title {
+            font-size: 1em;
+            font-weight: 700;
+            margin-bottom: 1.6em;
+        }
+        .description {
+            line-height: 1.3;
+            font-size: 0.9em;
+            margin-bottom: 1.5em;
+            @include mq($from: tb, $until: dss) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+// Panels for the latest blog articles
+.panel-latest-articles {
+    position: relative;
+    margin: 2em 0 3em;
+    .panel-latest-articles__list {
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding: 0 15px;
+        .panel-latest-articles__list-item {
+            background-image: linear-gradient( $black , transparent);
+            min-height: 250px;
+            margin-bottom: 15px;
+            padding: 1em;
+            .date {
+                font-size: 0.8em;
+            }
+            .title {
+                @include mq($until: sph) {
+                    font-size: 0.95rem;
+                }
+            }
+            .link {
+                position: absolute;
+                bottom: 1em;
+                right: 2em;
+            }
+        }
+    }
+}

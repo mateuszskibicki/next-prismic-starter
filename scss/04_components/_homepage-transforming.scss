@@ -1,0 +1,119 @@
+/*--------------------------------------------------------------------------------------------
+                         Marketing site Homepage Transforming CTA box
+ --------------------------------------------------------------------------------------------*/
+
+.transforming {
+    padding: 3rem 0;
+
+    .transforming-container {
+
+        .transforming {
+            &__title {
+                margin-bottom: 2em;
+                .title {
+                    font-weight: 300;
+                }
+            }
+            &__images {
+                position: relative;
+                // min-height: 350px;
+                .image-container {
+                    max-height: 400px;
+                    position: relative;
+                    z-index: 0; // TODO add to zindex mixin
+                    // &:not(:first-child) {
+                        &:after {
+                        content: '';
+                        position: absolute;
+                        background-color: $tertiary-color;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        mix-blend-mode: saturation;
+                        }
+                        &:hover:after {
+                            background-color: $primary-color-2;
+                            mix-blend-mode: soft-light;
+                        }
+                    // }
+                    // &:first-child {
+                    //     &:after {
+                    //     content: '';
+                    //     position: absolute;
+                    //     background-color: $primary-color-2;
+                    //     top: 0;
+                    //     bottom: 0;
+                    //     left: 0;
+                    //     right: 0;
+                    //     mix-blend-mode: soft-light;
+                    //     }
+                    // }
+                    .image {
+                        height: 100%;
+                        overflow: hidden;
+                        margin: 0 -15px;
+                    &__title {
+                        position: absolute;
+                        top: 2em;
+                        left: 15%;
+                        color: $white;
+                        z-index: 5; // TODO add to zindex mixin
+                    }
+                    &__image {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    &__link {
+                        position: absolute;
+                        bottom: 24px;
+                        left: 15%;
+                        text-transform: uppercase;
+                        text-decoration: underline;
+                        color: $white;
+                        z-index: 5; // TODO add to zindex mixin
+                    }
+                }
+            }
+            }
+            &__slider {
+                display: flex;
+                .slider {
+                    min-height: 300px;
+                    min-width: 300px;
+                    &__mask {
+                        clip-path: polygon(50% 5%,90% 28%,90% 74%,50% 97%,10% 74%,10% 28%);
+                    }
+                    .carousel-item {
+                        img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        }
+                    }
+                }
+                .slider-cta {
+                    align-self: center;
+                    .title {
+                        font-weight: 300;
+                        color: $primary-color-2;
+                        margin-bottom: 1em;
+                    }
+                    .description {
+                        margin-bottom: 2em;
+
+                    }
+                }
+                .carousel-indicators {
+                    &__item {
+                        background-color: #ddd;
+                        &.active {
+                            background-color: #888;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

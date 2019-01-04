@@ -1,0 +1,137 @@
+// -------- SETTINGS FOR List of APPLICATIONS -------- //
+
+
+.application-list__container {
+    .application-list__my-applications {
+        .application-list__header {
+            h4 {
+                margin-bottom: 0.8em;
+            }
+        }
+        .application-list__my-applications--container {
+            .application-list__list-items {
+                list-style: none;
+                margin-left: 0;
+                margin-bottom: 5em;
+                padding: 0 1em;
+                .application-list__item {
+                    border-bottom: 1px solid lighten($tertiary-color, 50%);
+                    padding: 1.34em 0 1.8em 0;
+                    background-color: $white; 
+                    &:last-child {
+                         border-bottom: 1px solid lighten($tertiary-color, 50%);
+                    }
+                    &:nth-child(odd) {
+                        background-color: darken($white, 5%);
+                        border-bottom: 1px solid lighten($tertiary-color, 60%);
+                    }
+                    .application-list__col-1 {
+                        @include mq ($until: tb) {
+                            margin-bottom: 1.2em;
+                        }
+                        .application-list__title {
+                            h5 {
+                                margin-bottom: 0.7em;
+                                a {
+                                    color: $tertiary-color;
+                                    font-weight: 700;
+                                    &:hover {
+                                        color: darken($primary-color-1, 10%);
+                                    }
+                                }
+                            }
+                        } // .application-list__salary {}
+                        .application-list__end-date {
+                            font-weight: 500;
+                            text-align: center;
+                            @include mq($from: mb, $until: tb) {
+                                text-align: right;
+                            }
+                            .application-list__end-date--red {
+                                color: $alert-color;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    .application-list__col-2 {
+                        .application-list__status--label {
+                            font-weight: 500;
+                            margin-bottom: .25em;
+                        }
+                        .application-list__status {
+                            .form-status-application {
+                                .new-field-boxundefined,
+                                .new-field-boxfalse {
+                                    display: inline-block;
+                                    width: 70%;
+                                    .Select-control {
+                                        background-color: $tertiary-color;
+                                        border: 1px solid transparent;
+                                        border-bottom: 2px solid transparent;
+                                        padding: 0 .8em;
+                                        width: 100%;
+                                        outline: none;
+                                        &:hover {
+                                            border-bottom: 2px solid $primary-color-1;
+                                            @include transition(all .3s ease);
+                                        }
+                                        .Select-placeholder,
+                                        .Select-clear-zone {
+                                            color: $white;
+                                        }
+                                        .Select-arrow-zone>.Select-arrow {
+                                            border-color: $white transparent transparent;
+                                        }
+                                    }
+                                    .Select-menu-outer {
+                                        border: none;
+                                        >.Select-menu {
+                                            @include box-shadow(-1px, 13px, 127px, -24px, rgba(0, 0, 0, 0.75));
+                                            .Select-option {
+                                                background-color: $white;
+                                                @include border-radius(0);
+                                                &:hover {
+                                                    background-color: lighten($tertiary-color, 20%);
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            button {
+                                color: $alert-color;
+                                display: inline;
+                                height: 37px;
+                                margin-left: 1em;
+                                padding: 0.4em 0.6em;
+                                position: absolute;
+                                top: 0;
+                            }
+                        }
+                        .application-list__delete {
+                            .btn {
+                                padding: 0;
+                                background: transparent;
+                                span.icon {
+                                    color: $alert-color;
+                                    margin: 0 auto;
+                                    padding-left: 0 !important;
+                                    padding-top: 8px;
+                                    height: 2em !important;
+                                    .fa {
+                                        font-size: 1.5em;
+                                        @include transition(all .3s ease);
+                                        &:hover {
+                                            color: darken($alert-color, 20%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

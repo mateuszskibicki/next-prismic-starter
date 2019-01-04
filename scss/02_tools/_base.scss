@@ -1,0 +1,520 @@
+// ------------------------------------------------------ \\
+// This file contains all BASE styles.
+// ------------------------------------------------------ \\
+
+/**
+ * Set up a decent box model on the root element
+ */
+ html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/**
+ * Custom scrollbar
+ */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $grey-light; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $pomegranate;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($pomegranate, 10%); 
+}
+  
+/**
+* Make all elements from the DOM inherit from the parent box-sizing
+* Since `*` has a specificity of 0, it does not override the `html` value
+* making all elements inheriting from the root box-sizing value
+* See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+// /*------------------------------------*\
+//     #FONTs
+// \*------------------------------------*/
+
+$baseline: 16px;
+
+$base-font-size: $baseline;
+
+/**
+TYPI settings
+for help check https://github.com/zellwk/typi
+or https://zellwk.com/blog/typi/
+*/
+
+body,
+article {
+  @include typi(base); //include TYPI plugin base settings
+  color: $text-color;
+}
+
+$typi-breakpoint: mq;
+
+$typi: (
+  base: (
+    null: ($base-font-size, 1.5),
+  ),
+  p: (
+    null: (16px, 1.5),
+    piad: (18px),
+    mb: (17px),
+    sph: (16px),
+    tb: (16px),
+    dss: (16px),
+    dsm: (17px),
+    dsl: (18px),
+    dsxl: (19px),
+    dsxxl: (20px)
+  ),
+  h1: (
+    null: (52px, 1.058823),
+    piad: (36px),
+    mb: (40px),
+    sph: (44px),
+    tb: (48px),
+    dss: (52px),
+    dsm: (52px),
+    dsl: (52px),
+    dsxl: (52px),
+    dsxxl: (52px)
+  ),
+  h2: (
+    null: (42px, 1.142857),
+    piad: (24px),
+    mb: (29px),
+    sph: (34px),
+    tb: (39px),
+    dss: (42px),
+    dsm: (42px),
+    dsl: (42px),
+    dsxl: (42px),
+    dsxxl: (42px)
+  ),
+  h3: (
+    null: (26px, 1.846153),
+    piad: (18px),
+    mb: (20px),
+    sph: (22px),
+    tb: (24px),
+    dss: (26px),
+    dsm: (26px),
+    dsl: (26px),
+    dsxl: (26px),
+    dsxxl: (26px)
+  ),
+  h4: (
+    null: (16px, 1.5),
+    piad: (14px),
+    mb: (14.5px),
+    sph: (15px),
+    tb: (15.5px),
+    dss: (16px),
+    dsm: (16px),
+    dsl: (16px),
+    dsxl: (16px),
+    dsxxl: (16px)
+  ),
+  h5: (
+    null: (14px, 1.5),
+    piad: (12px),
+    mb: (12.5px),
+    sph: (13px),
+    tb: (14.5px),
+    dss: (14px),
+    dsm: (14px),
+    dsl: (14px),
+    dsxl: (14px),
+    dsxxl: (14px)
+  ),
+  h6: (
+    null: (12px, 1)
+  )
+);
+
+@include typi-init;
+
+$font-family-heading: $ff-Montserrat !default;
+$font-family-text: $ff-OpenSans !default;
+$font-family-landing: $ff-Lato !default;
+
+h1,
+.h1 {
+  @include typi(h1);
+  margin-top: vr(0.35294);
+  margin-bottom: vr(0.705882);
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+h2,
+.h2 {
+  @include typi(h2);
+  margin-bottom: vr(1.14285);
+  margin-top: vr(0.571428);
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  @include typi(h3);
+  margin-bottom: vr(0.92307);
+  margin-top: vr(0);
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+h4,
+.h4 {
+  @include typi(h4);
+  margin-bottom: vr(1.5);
+  margin-top: vr(0);
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+h5,
+.h5 {
+  @include typi(h5);
+  margin-bottom: vr(1.5);
+  margin-top: vr(0);
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+h6,
+.h6 {
+  @include typi(h6);
+  margin-bottom: vr(1.5);
+  margin-top: vr(0);
+  font-family: $font-family-heading;
+  font-weight: 400;
+}
+
+p,
+.p {
+  @include typi(p);
+  margin-top: vr(0);
+  margin-bottom: vr(1.5);
+  font-family: $font-family-text;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.page-subheader {
+    width: 100%;
+    max-width: 700px;
+    min-width: 50%;
+    margin: 0 auto 2em;
+    &.membership {
+      max-width: 400px;
+      p {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: vr(0);
+  margin-bottom: vr(1.5);
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: vr(0);
+  margin-bottom: vr(0);
+}
+
+em {
+  font-style: italic;
+}
+
+strong, .strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 75%;
+}
+
+i {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  font-style: normal;
+  background-repeat: no-repeat;
+}
+
+// /*------------------------------------*\
+//     #LINKS AND SELECTIONS
+// \*------------------------------------*/
+
+::-moz-selection {
+    background: $primary-color-1;
+    color: $white;
+    text-shadow: none;
+}
+
+::selection {
+    background: $primary-color-1;
+    color: $white;
+    text-shadow: none;
+}
+
+a {
+  color: $primary-color-2;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: darken($primary-color-2, 5%);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+// /*------------------------------------*\
+//     #BORDERS
+// \*------------------------------------*/
+$border-radius: 4px !default;
+$border-round: 50% !default;
+$border-primary: 1px solid $primary-color-1 !default;
+
+// /*------------------------------------*\
+//     #ANIMATIONS
+// \*------------------------------------*/
+$base-duration: 150ms !default;
+$base-timing: ease !default;
+
+// /*------------------------------------*\
+//     #INPUTS
+// \*------------------------------------*/
+textarea,
+input[type="submit"]:focus,
+div {
+  outline: 0 none;
+  font-family: $font-family-text;
+}
+
+button,
+input,
+select,
+textarea {
+  vertical-align: top;
+  margin: 0;
+}
+
+/*------------------------------------*\
+    #LINES
+\*------------------------------------*/
+.hr {
+  margin: 2em auto;
+  min-width: 200px;
+  max-width: 50%;
+  width: 800px;
+}
+.hr-basic {
+  @extend .hr;
+  border-top: 1px solid $grey-dark !important;
+}
+
+.hr-light {
+  @extend .hr;
+  border-top: 1px solid lighten($grey-dark,50%) !important;
+}
+
+.hr-search {
+  border-top: 1px solid $grey-dark;
+  width: 50%;
+}
+
+.hr-dark {
+  border-color: $grey-dark;
+}
+
+/*------------------------------------*\
+    #QUOTES
+\*------------------------------------*/
+
+
+/**
+ * 1. Hang the opening quote of the blockquote.
+ */
+
+blockquote {
+  text-indent: -0.41em;
+}
+
+/**
+ * Set up quote marks on quoting elements. This is very English-based, so we are
+ * using “, ”, ‘, and ’ quotes.
+ */
+
+blockquote {
+  quotes: "“" "”";
+  margin-left: 1.5em;
+  p {
+    &:before {
+      content: "“";
+      content: open-quote;
+    }
+    &:after {
+      content: "";
+      content: no-close-quote;
+    }
+    &:last-of-type:after {
+      content: "”";
+      content: close-quote;
+    }
+  }
+}
+
+q {
+  quotes: "‘" "’" "“" "”";
+  &:before {
+    content: "‘";
+    content: open-quote;
+  }
+  &:after {
+    content: "’";
+    content: close-quote;
+  }
+  q:before {
+    content: "“";
+    content: open-quote;
+  }
+  q:after {
+    content: "”";
+    content: close-quote;
+  }
+  /**
+   * If an element opens with an inline quote, let’s hang that.
+   */
+  &:first-child {
+    display: inline-block;
+    text-indent: -0.22em;
+  }
+}
+
+/*------------------------------------*\
+    #TABLES
+\*------------------------------------*/
+
+/**
+ * Crude table styles; tables are very difficult to keep on the baseline.
+ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0 0.5em;
+}
+
+/*------------------------------------*\
+    #HAMBURGER
+\*------------------------------------*/
+
+// TODO -- Needs refactoring out into its own file or deleting
+// .hamburger {
+//   padding: $hamburger-padding-y $hamburger-padding-x;
+//   display: inline-block;
+//   cursor: pointer;
+
+//   transition-property: opacity, filter;
+//   transition-duration: $hamburger-hover-transition-duration;
+//   transition-timing-function: $hamburger-hover-transition-timing-function;
+
+//   // Normalize (<button>)
+//   font: inherit;
+//   color: inherit;
+//   text-transform: none;
+//   background-color: transparent;
+//   border: 0;
+//   margin: 0;
+//   overflow: visible;
+
+//   &:hover {
+//     @if $hamburger-hover-use-filter == true {
+//       filter: $hamburger-hover-filter;
+//     }
+//     @else {
+//       opacity: $hamburger-hover-opacity;
+//     }
+//   }
+// }
+
+// .hamburger-box {
+//   width: $hamburger-layer-width;
+//   height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+//   display: inline-block;
+//   position: relative;
+// }
+
+// .hamburger-inner {
+//   display: block;
+//   top: 50%;
+//   margin-top: $hamburger-layer-height / -2;
+
+//   &,
+//   &::before,
+//   &::after {
+//     width: $hamburger-layer-width;
+//     height: $hamburger-layer-height;
+//     background-color: $hamburger-layer-color;
+//     border-radius: $hamburger-layer-border-radius;
+//     position: absolute;
+//     transition-property: transform;
+//     transition-duration: 0.15s;
+//     transition-timing-function: ease;
+//   }
+
+//   &::before,
+//   &::after {
+//     content: "";
+//     display: block;
+//   }
+
+//   &::before {
+//     top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+//   }
+
+//   &::after {
+//     bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+//   }
+// }

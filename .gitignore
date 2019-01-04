@@ -1,0 +1,13 @@
+.sass-cache/*
+.DS_Store
+.idea
+node_modules
+vendor
+dist
+.vscode/
+/nbproject
+*.orig
+*.swp
+.next
+next
+/Users/mateuszskibicki/Desktop/marketing-combined/.next
