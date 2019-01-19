@@ -1,3 +1,14 @@
+import React from 'react'
+
+export default function _error() {
+  return (
+    <div>
+      error page
+    </div>
+  )
+}
+
+
 //Custom error page
 // import React, { Component } from "react";
 // import PropTypes from 'prop-types';

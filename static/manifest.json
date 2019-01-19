@@ -1,6 +1,6 @@
 {
-    "name": "In Touch",
-    "short_name": "in-touch",
+    "name": "Project name",
+    "short_name": "project name",
     "lang": "en-GB",
     "start_url": "/",
     "display": "standalone",
