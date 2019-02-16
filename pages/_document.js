@@ -1,9 +1,11 @@
 import Document, {Head, Main, NextScript} from 'next/document';
-
 export default class MyDocument extends Document {
     render(){
         return (
             <html lang="en-UK">
+            <Head>
+                <link rel="stylesheet" href="/_next/static/styles.scss"/>
+            </Head>
                 {/* <Head>
                     <link rel="manifest" href="/static/manifest.json" />
                     <meta name="mobile-web-app-capable" content="yes" />

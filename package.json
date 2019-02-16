@@ -2,23 +2,33 @@
   "name": "starter",
   "version": "1.0.0",
   "description": "Next.js Prismic Starter",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "node server/server.js",
+    "dev-nodemon": "nodemon server/server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server/server.js",
+    "start-default": "NODE_ENV=production node server/server.js",
+    "start": "node server/server.js -p $PORT",
+    "heroku-postbuild": "next build",
     "export": "next export",
-    "start-live": "next start -p 80"
+    "start-live": "next start -p 80",
+    "test": "jest --verbose",
+    "test-watch": "jest --watchAll --verbose"
   },
   "keywords": [],
   "author": "Mateusz Skibicki",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "compression": "^1.7.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "next": "^7.0.2",
+    "next-routes": "^1.4.2",
+    "node-sass": "^4.11.0",
     "nprogress": "^0.2.0",
     "prismic-javascript": "^1.5.0",
     "prismic-reactjs": "^0.3.1",
@@ -26,10 +36,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-js-pagination": "^3.0.2",
-    "react-responsive": "^6.0.1",
-    "react-slick": "^0.23.2",
-    "react-stripe-elements": "^2.0.1",
-    "rss-parser": "^3.5.4"
+    "react-responsive": "^6.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.3.1",
@@ -40,6 +47,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
     "postcss-import": "^12.0.1",
     "precss": "^3.1.2"
   }
