@@ -1,41 +1,34 @@
 const express = require('express')
-const routes = require('./routesFrontEnd')
-const compression = require('compression')
+require('dotenv').config()
+const routesFrontEnd = require('./next-routes/routesFrontEnd')
 const next = require('next')
-const testMiddleware = require('./middleware/testMiddleware')
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
-const handle = routes.getRequestHandler(app);
-const port = process.env.PORT || 3000;
-
-// .env file
-require('dotenv').config()
-
-// API controllers
-const testController = require('./router/testController')
+const handle = routesFrontEnd.getRequestHandler(app)
 
 
 app.prepare()
     .then(() => {
+        // Server express
         const server = express()
-        // Middleware
-        server.use(compression())
-        server.use(express.json())
-        server.use(testMiddleware)
 
-        // Custom API endpoints
-        server.use('/api/test', testController);
+        // Extracted routes and middleware
+        require('./router/routes')(server)
+
+        // validation joi with objectid -> if needed
+        //require('./validation/validation')();
+
+        // mongoose connect -> if needed
+        //require('./database/db')();
 
         // Next.js
         server.get('*', async (req, res) => {
             return handle(req, res)
         })
 
-        // Listen port 3000
-        server.listen(port, (err) => {
-            if (err) throw err
-            console.log('> Ready on http://localhost:3000')
-        })
+        // Listen port process.env.PORT || 3000
+        const port = process.env.PORT || 3000
+        server.listen(port, () => console.log('> Ready on port: ' + port))
     })
     .catch((ex) => {
         console.error(ex.stack)
