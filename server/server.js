@@ -26,9 +26,13 @@ const serverExpress = () => {
 
     // Listen port process.env.PORT || 3000
     const port = process.env.PORT || 3000
-    return server.listen(port, () => console.log('> Ready on port: ' + port))
+    return server.listen(port, () => {
+        process.env.NODE_ENV !== 'test' && console.log('> Ready on port: ' + port)
+    })
 }
 
+// Next.js app if not test
+process.env.NODE_ENV !== 'test' && 
 app.prepare()
     .then( () => {
         serverExpress()
@@ -39,5 +43,5 @@ app.prepare()
     })
 
 
-// Testing with jest
-module.exports = serverExpress
+// Export express server if process.env.NODE_ENV === 'test' -> testing with jest and supertest
+process.env.NODE_ENV === 'test' && (module.exports = serverExpress)
