@@ -8,7 +8,7 @@
     "dev-nodemon": "nodemon server/server.js",
     "build": "next build",
     "start-default": "NODE_ENV=production node server/server.js",
-    "start": "node server/server.js -p $PORT",
+    "start": "NODE_ENV=production node server/server.js -p $PORT",
     "heroku-postbuild": "next build",
     "export": "next export",
     "start-live": "next start -p 80",

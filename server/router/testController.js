@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/:id', async (req, res) => {
-    if (req.params.id) return res.status(200).json({id: req.params.id})
+    if (req.params.id) return res.status(200).json({id: req.params.id, success: true})
     return res.status(404).json({error: 'Param :id is not defined'})
 })
 
