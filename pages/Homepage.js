@@ -1,13 +1,10 @@
-import "../scss/styles.scss"
-import { HomePage } from '../templates/homepage/HomePage';
+import { MainLayout } from '../components/layout/MainLayout'
 
 export default function index() {
   return (
-    <div>
-      <h1 className="example">sadadds</h1>
-      <button className="btn btn-secondary">Aasaas</button>
-      <HomePage />
-    </div>
+    <MainLayout>
+      <h1>Homepage</h1>
+    </MainLayout>
   )
 }
 
