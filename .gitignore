@@ -11,5 +11,5 @@ dist
 .next
 next
 /Users/mateuszskibicki/Desktop/marketing-combined/.next
-./package-lock.json
+/package-lock.json
 # .env
