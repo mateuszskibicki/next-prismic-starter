@@ -1,0 +1,7 @@
+.single-media-slice {
+    max-width: 1600px;
+    margin: auto;
+    h3 {
+        @include header-style($primary-color-1);
+    }
+}

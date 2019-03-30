@@ -1,46 +1,51 @@
 {
   "name": "starter",
   "version": "1.0.0",
-  "description": "Next.js Prismic Starter",
+  "description": "Personal blog",
   "main": "server.js",
   "scripts": {
     "dev": "node server/server.js",
     "dev-nodemon": "nodemon server/server.js",
     "build": "next build",
-    "start-default": "NODE_ENV=production node server/server.js",
     "start": "NODE_ENV=production node server/server.js -p $PORT",
-    "heroku-postbuild": "next build",
-    "export": "next export",
-    "start-live": "next start -p 80",
+    "start-2": "NODE_ENV=production node server/server.js -p $PORT",
+    "now-build": "next build",
     "test": "jest --verbose",
-    "test-watch": "jest --watchAll --verbose"
+    "test-watch": "jest --watchAll --verbose",
+    "analyze": "BUNDLE_ANALYZE=both next build",
+    "analyze:server": "BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build"
   },
   "keywords": [],
   "author": "Mateusz Skibicki",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "compression": "^1.7.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
-    "next": "^7.0.2",
+    "next": "^8.0.3",
     "next-routes": "^1.4.2",
     "node-sass": "^4.11.0",
     "nprogress": "^0.2.0",
     "prismic-javascript": "^1.5.0",
     "prismic-reactjs": "^0.3.1",
+    "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-js-pagination": "^3.0.2",
     "react-responsive": "^6.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "jest": "^24.1.0",
     "nodemon": "^1.18.10",
-    "supertest": "^3.4.2"
+    "supertest": "^3.4.2",
+    "webpack": "^4.28.4"
   }
 }

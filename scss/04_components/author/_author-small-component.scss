@@ -1,0 +1,43 @@
+.author-small-component{
+
+    color: $black-light;
+
+    &__name {
+        font-weight: 700;
+        display: inline-block;
+        @include on-hover-text;
+    }
+
+    &__full-name-big {
+        @include header-style($black-dark);
+    }
+
+    &__photo {
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        @include on-hover-img;
+    }
+
+    &__photo--big {
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        @include on-hover-img;
+    }
+
+    &__icons {
+        margin-top: 0.8rem;
+        a {
+            color: $black-light;
+            text-shadow: $shadow;
+            padding: 0.2rem 0.4rem;
+            svg {
+                font-size: 1.8rem;
+                transition: .3s;
+                @include on-hover-text;
+            }
+        }
+    }
+
+}

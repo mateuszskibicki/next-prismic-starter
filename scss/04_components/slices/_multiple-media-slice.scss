@@ -1,0 +1,6 @@
+.multiple-media-slice {
+    &__title {
+        @include header-style($black-dark);
+        margin: auto;
+    }
+}

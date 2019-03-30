@@ -1,0 +1,48 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  .dark-overlay {
+    @include bg-gradient-header-overlay;
+  }
+
+  &--default {
+    h1,
+    p {
+      color: $white-primary;
+      z-index: 2;
+    }
+
+    h1 {
+      @include header-style($white-primary);
+      margin: auto;
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .container {
+      padding: 3rem 0.8rem;
+      position: relative;
+
+      @include media-md {
+        padding: 7rem 1rem;
+      }
+
+      @include media-xl {
+        padding: 9rem 1rem;
+      }
+
+    }
+
+    &--bg-color {
+      text-align: center;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 0;
+      background-image: linear-gradient(to right bottom, #222f3e, #535966, #858891, #bababf, #efefef);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@mixin on-hover-text($color: $secondary-color) {
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-3px);
+        color: $color;
+    }
+}
+
+@mixin on-hover-img {
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.hover-img {
+    @include on-hover-img;
+}
+
+.hover-text {
+    @include on-hover-text;
+}

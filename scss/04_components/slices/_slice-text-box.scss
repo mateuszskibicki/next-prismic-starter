@@ -1,0 +1,24 @@
+.slice-text-box {
+    h1,
+    h2 {
+        @include header-style($black-dark);
+    }
+
+    h3,
+    h4 {
+        @include header-style($black-dark);
+    }
+
+    h5,
+    h6 {
+        @include header-style($black-dark);
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    ul {
+        list-style-image: url('/static/images/ul-style/bullet.svg');
+    }
+}

@@ -1,0 +1,22 @@
+.footer {
+    a {
+        color: $black-dark;
+        transition: .3s;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__icons { 
+        text-align: center;
+        a {
+            color: $black-light;
+            text-shadow: $shadow;
+            padding: 0.2rem 0.4rem;
+            margin-right: 0.5rem;
+            svg {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

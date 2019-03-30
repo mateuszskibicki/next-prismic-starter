@@ -1,0 +1,44 @@
+.author-article-slice {
+    h4 {
+        @include header-style($primary-color-1);
+    }
+    
+    a {
+        color: $primary-color-1;
+        &:hover {
+            color: darken($primary-color-1, 10%);   
+        }
+    }
+
+    .tags {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    &__tag {
+        display: inline-block;
+        border: 2px $primary-color-1 solid;
+        border-radius: 10px;
+        background-color: $primary-color-1;
+        color: $white-primary;
+        box-shadow: $shadow;
+        padding: 0.15rem 0.3rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+
+    &__icons {
+        margin-top: 0.8rem;
+        a {
+            color: $black-light;
+            text-shadow: $shadow;
+            padding: 0.2rem 0.4rem;
+            margin-right: 0.5rem;
+            svg {
+                font-size: 1.8rem;
+                transition: .3s;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+$sm-device: 576px; //and above
+$md-device: 768px; //and above
+$lg-device: 992px; //and above
+$xl-device: 1200px; //and above
+@mixin media-sm {
+  @media (min-width: #{$sm-device}) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: #{$md-device}) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: #{$lg-device}) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: #{$xl-device}) {
+    @content;
+  }
+}
+
+@mixin media-portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin media-landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}

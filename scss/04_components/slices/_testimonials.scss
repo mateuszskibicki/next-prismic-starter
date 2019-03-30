@@ -1,0 +1,118 @@
+/*--------------------------------------------------------------------------------------------
+                         Marketing site testimonials component
+ --------------------------------------------------------------------------------------------*/
+
+.testimonials-carousel { //Carousel Styles
+    background: $gradient-testimonials-marketing;
+    @include angle-edge($angle: 2, $angle-position-y: 'both', $angle-position-x: 'right');
+    color: $white;
+    @include mq($until: mb) {
+        padding: 3em 0em;
+    }
+    @include mq($from: mb, $until: sph) {
+        padding: 4em 0em;
+    }
+    @include mq($from: sph, $until: dss) {
+        padding: 5em 0em 7em;
+    }
+    @include mq($from: dss) {
+        padding: 6em 0em 8em;
+    }
+    .testimonials__list {
+        margin: 0px 150px;
+        @include mq($from: dss, $until: dsxl) {
+            margin: 0px 40px;
+        }
+        @include mq($until: dss) {
+            margin: 0;
+        }
+        .slick-slider {
+            padding-bottom: 3em;
+            @include mq($until: sph) {
+                padding-bottom: 0;
+            }
+            .slick-list {
+                .slick-track {
+                    display: flex !important;
+                    .slick-slide {
+                        height: inherit !important;
+                        padding: 1em 2em;
+                        @include mq($until: mb) {
+                            padding: 0;
+                        }
+                        > div {
+                            height: 100%;
+                        }
+                        .testimonials__list-item {
+                            height: 100%;
+                            background-color: rgba($white, 0.07);
+                        }
+                    }
+                }
+            }
+        }
+        .slick-dots li button::before {
+            color: $white;
+        }
+    }
+}
+.testimonials-carousel { //Carousel content Styles
+    .title {
+        margin-bottom: 2.1rem;
+        text-align: center;
+    }
+    .testimonials__list-item {
+        position: relative;
+        border-radius: 4px;
+        padding: 3em;
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            &__description {
+                position: relative;
+                font-size: 14px;
+                &:before {
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font-family: "Font Awesome 5 Free";
+                    content: '\f10d';
+                    font-weight: 900;
+                    font-size: 1.3em;
+                    position: absolute;
+                    top: -5px;
+                    left: -25px;
+                }
+            }
+            .details {
+                display: flex;
+                align-items: center;
+                &__image {
+                    flex: 0 0 auto;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    .image {
+                        max-height: 100%;
+                    }
+                }
+                &__user {
+                    padding-left: 15px;
+                    .name {
+                        margin-bottom: 0;
+                    }
+                    .title {
+                        font-size: 0.7em;
+                        font-style: italic;
+                        text-align: left;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

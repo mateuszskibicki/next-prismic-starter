@@ -1,0 +1,86 @@
+/*--------------------------------------------------------------------------------------------
+                         Marketing site stats component
+ --------------------------------------------------------------------------------------------*/
+
+.stats-section {
+    height: auto;
+    position: relative;
+
+    .dark-overlay{
+      height: 80%;
+    }
+    &__banner {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 80%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left:0;
+        @include mq($until: dss) {
+            height: auto;
+        }
+    }
+    &__content {
+        padding-top: 3em;
+        padding-bottom: 2em;
+        z-index: 2;
+        position: relative;
+
+        .banner-content {
+            background-color: transparent;
+            .content-container {
+                width: 60%;
+                .title {
+                    margin-top: 0;
+                    color: $white;
+                }
+                p {
+                    color: $white;
+                }
+            }
+        }
+        .stats-list {
+            background-color: $white;
+            box-shadow: $shadow-border;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &__item {
+                flex: 1 0 33%;
+                padding: 2em;
+                @include mq($until: dss) {
+                    flex-basis: 100%;
+                }
+                .title {
+                    position: relative;
+                    &:after {
+                        content:'';
+                        border-top: 6px solid $pacific-blue;
+                        height: 1px;
+                        width: 1.5em;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                    }
+                }
+                .description p{
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+    .banner-footer {
+        // height: 20%;
+        background-color: $white;
+        position: relative;
+        z-index: -4;
+        @include mq($until: dss) {
+            height: 0;
+        }
+    }
+}

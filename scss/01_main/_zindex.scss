@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #Z-INDEXES
+\*------------------------------------*/
+
+/*
+All z-indexes should be declared here first
+ */
+
+$zindex: (
+    z-killer                    :99999,
+    default-popup               :13000,
+    profile-header-small        :12500,
+    buy-modal                   :12000,
+    scroll-top                  :10000,
+    modal                       : 9000,
+    button-badge                : 7500,
+    overlay                     : 8000,
+    network-notifier            : 7000,
+    header-main                 : 6000,
+    profile-preview-mode-switch : 5500,
+    footer                      : 5000,
+    network-logo                : 4000,
+    edit-profile-nav-indicator  : 3000,
+    profile-checklist-box       : 100,
+    profile-checklist-box-image : 99,
+    premium                     : 10,
+    // profile-edit-button         : 5,
+);
+

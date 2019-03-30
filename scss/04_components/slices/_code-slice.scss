@@ -1,0 +1,24 @@
+.code-slice {
+  &__title {
+    @include header-style($primary-color-1);
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    height: 9px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: darken($white-primary, 20%);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary-color-1;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($primary-color-1, 10%);
+  }
+}

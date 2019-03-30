@@ -1,0 +1,64 @@
+.features-block {
+	padding: $baseline * 2;
+
+	h3 {
+		margin: $baseline * 2 0;
+	}
+
+	&_container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $baseline * 2;
+        @include mq($from: sph) {
+            flex-direction: row;
+        }
+	}
+
+    
+	&_icon {
+		position: relative;
+        margin: auto;
+        margin-bottom: 1rem;
+
+		.hexagon {
+			margin-left: -1em;
+			margin-top: 0;
+		}
+
+		img {
+			position: absolute;
+			width: 50px;
+			top: 1.8em;
+			left: 1em;
+        }
+        
+        @include mq($from: mb) {
+            margin: none;
+        }
+	}
+
+	&_content {
+		padding: 0 20px;
+
+		h4 {
+			margin-bottom: 10px;
+			font-size: 25px;
+			font-weight: 500;
+		}
+
+		p {
+			font-size: 14px;
+			margin-bottom: $baseline;
+		}
+
+		a {
+			border-bottom: 1px solid $pomegranate;
+
+			&:hover {
+				text-decoration: none;
+				color: $pacific-blue;
+				border-bottom: 1px solid $pacific-blue;
+			}
+		}
+	}
+}

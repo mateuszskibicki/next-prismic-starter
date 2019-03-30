@@ -1,10 +1,11 @@
-import { HomePage } from '../templates/homepage/HomePage';
 import "../scss/styles.scss"
+import { HomePage } from '../templates/homepage/HomePage';
 
 export default function index() {
   return (
     <div>
       <h1 className="example">sadadds</h1>
+      <button className="btn btn-secondary">Aasaas</button>
       <HomePage />
     </div>
   )

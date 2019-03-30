@@ -1,0 +1,189 @@
+/*--------------------------------------------------------------------------------------------
+                         Marketing site Package Styles
+ --------------------------------------------------------------------------------------------*/
+
+ .packages {
+    padding: 6em 0;
+    background: $grey-lighter;
+    @include mq($until: tb) {
+        padding-top: 0;
+    }
+    .packages-list {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        @include mq($until: tb) {
+            flex-direction: column;
+        }
+        &__item {
+          position: relative;
+          width: 33%;
+          @include mq($until: tb) {
+              width: 100%;
+              margin-top: $baseline*2;
+          }
+        }
+    }
+}
+
+.recommended {
+    height: 40px;
+    background-color: $primary-color-2;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.9em;
+    position: absolute;
+    width: 100%;
+    top: -40px;
+    .inner {
+        font-family: $ff-Montserrat;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.packages-list__item {
+
+    font-family: $ff-Montserrat;
+    background-color: $white;
+    box-shadow: $shadow-border;
+    padding-bottom: 1.3em;
+    &.specialist {
+        background-color: $primary-color-1;
+        color: $white;
+        @include mq($until: tb) {
+            margin-top: $baseline*2+40px;
+        }
+        .hr-short { // Move to base with other hr's?
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-top: 2px solid rgba(255,255,255,0.4);
+            width: 30%;
+        }
+    }
+
+    &__container {
+      padding:0 2em 3em;
+    }
+    .package {
+        &__type {
+            font-size: 1.5em;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 1px $grey solid;
+            padding: 0.7em 0em;
+            margin-bottom: 0.8em;
+            width: 100%;
+        }
+        &__icon {
+            width: 100%;
+            img {
+              width: 7em;
+              margin: 0 auto;
+              display: block;
+            }
+        }
+
+        &__length {
+            text-align: center;
+            font-size: 0.7em;
+            padding-top: 0.3em;
+            width: 100%;
+        }
+        &__price {
+            text-align: center;
+            width: 100%;
+            .price {
+                &__currency {
+                    position: relative;
+                    top: -35px;
+                    font-size: 1.2em;
+                }
+                &__amount {
+                    font-size: 4em;
+                }
+                &__subtitle {
+                    font-size: 0.85em;
+                }
+            }
+        }
+        &__features {
+            width: 100%;
+            @include mq($from: sph, $until: tb) {
+                padding: 0 9em;
+                text-align: center;
+            }
+            @include mq($from: mb, $until:sph) {
+                padding: 0em 8em;
+            }
+            @include mq($from: piad, $until:mb) {
+                padding: 0em 2em;
+            }
+            ul {
+                font-family: $ff-Montserrat;
+                list-style: none;
+                padding-left: 0.5em;
+            }
+            ul li:first-of-type {
+              color: $pomegranate;
+
+              &:hover {
+                color: $pacific-blue;
+              }
+            }
+            button {
+                color: $pomegranate;
+                background-color: transparent;
+                border:none;
+                padding: 0;
+                margin-bottom: 10px;
+                border-bottom: 1px solid $pomegranate;
+                cursor: pointer;
+
+                &:hover {
+                  color: $pacific-blue;
+                  border-bottom: 1px solid $pacific-blue;
+                }
+            }
+            ul li:before {
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-family: "Font Awesome 5 Free";
+                content: '\f00c';
+                padding-right: 1.1em;
+                vertical-align: middle;
+                font-weight: 900;
+                font-size: 0.7em;
+              }
+              li > .icon {
+                  padding-left: 0.5em;
+                font-size: 1em;
+              }
+        }
+        &__button {
+            width: 100%;
+            padding-top: 1.3em;
+            position: absolute;
+            width: 90%;
+            bottom:5%;
+            left:5%;
+
+            .btn {
+
+              width: 100%;
+
+            }
+        }
+    }
+    .hr-short { // Move to base with other hr's?
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-top: 2px solid rgba(0,0,0,0.1);
+        width: 30%;
+    }
+}

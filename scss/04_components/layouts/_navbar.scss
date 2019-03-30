@@ -1,0 +1,32 @@
+.navbar {
+    .nav-link,
+    &-brand {
+        color: $black-dark;
+        transition: .3s;
+        &:hover {
+            transform: scale(1.07);
+            color: $secondary-color;
+        }
+    }
+
+    .nav-link {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    &-toggler {
+        color: $black-dark;
+        transition: .3s;
+        outline: hidden;
+        &:hover {
+            transform: scale(1.07);
+            color: $secondary-color;
+        }
+    }
+
+    @include media-md {
+        .nav-link {
+            font-size: 1.0rem;
+        }
+    }
+}

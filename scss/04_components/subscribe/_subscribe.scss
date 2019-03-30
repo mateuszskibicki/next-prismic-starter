@@ -1,0 +1,35 @@
+.subscribe {
+    background-color: $secondary-color;
+    border-radius: 8px;
+    box-shadow: $shadow-md;
+    font-weight: 700;
+    color: $white-primary;
+    padding: 2rem 1rem;
+
+    input {
+        margin: 0.6rem 0;
+        width: 90%;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        font-size: 1.2rem;
+        outline: none;
+        border-radius: 3px;
+        box-shadow: $shadow-md;
+        background-color: $white-primary;
+        transition: .2s;
+        font-family: $font-titillium;
+        font-weight: 600;
+        color: $black-dark;
+        &:focus {
+            transform: scale(1.02);
+        }
+
+        @include media-md {
+            width: 70%;
+        }
+
+        @include media-xl {
+            width: 90%;
+        }
+    }
+}
