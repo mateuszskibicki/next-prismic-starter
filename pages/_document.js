@@ -4,7 +4,7 @@ export default class MyDocument extends Document {
         return (
             <html lang="en-UK">
             <Head>
-                <link rel="stylesheet" href="/_next/static/styles.scss"/>
+                <link rel="stylesheet"/>
             </Head>
                 {/* <Head>
                     <link rel="manifest" href="/static/manifest.json" />

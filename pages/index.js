@@ -1,9 +1,11 @@
 import { MainLayout } from '../components/layout/MainLayout'
+import { Link } from '../server/next-routes/routesFrontEnd'
 
 export default function index() {
   return (
     <MainLayout>
       <h1>Homepage</h1>
+      <Link route="/second"><button>second page</button></Link>
     </MainLayout>
   )
 }

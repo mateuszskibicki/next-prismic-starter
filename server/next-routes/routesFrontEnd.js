@@ -11,4 +11,5 @@ const routes = require('next-routes')
 module.exports = routes()
 
 //  ---------- Homepage
-.add('Homepage', '/')
+.add('index', '/')
+.add('random-page/SecondPage', '/second')
