@@ -1,12 +1,18 @@
-import Document, {Head, Main, NextScript} from 'next/document';
+import Document, { Head, Main, NextScript } from "next/document";
 export default class MyDocument extends Document {
-    render(){
-        return (
-            <html lang="en-UK">
-            <Head>
-                <link rel="stylesheet"/>
-            </Head>
-                {/* <Head>
+  render() {
+    return (
+      <html lang="en-UK">
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossOrigin="anonymous"
+          />
+          <link rel="stylesheet" />
+        </Head>
+        {/* <Head>
                     <link rel="manifest" href="/static/manifest.json" />
                     <meta name="mobile-web-app-capable" content="yes" />
                     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,11 +40,11 @@ export default class MyDocument extends Document {
                     <link rel="icon" type="image/png" sizes="72x72" href="/static/icons/icon-72x72.png" />
                     <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/static/icons/icon-72x72.png" />
                 </Head> */}
-                <body>
-                    <Main />
-                    <NextScript />
-                </body>
-            </html>
-        )
-    }
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    );
+  }
 }

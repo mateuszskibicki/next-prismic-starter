@@ -1,69 +1,83 @@
-// 
-// 
-// // // THIS IS EXAMPLE HOW FULL SEO LOOKS LIKE
-// 
-// 
+//
+//
+// // // THIS IS EXAMPLE HOW FULL SEO LOOKS LIKE -> LEAVE THIS FILE PLEASE
+//
+//
 
 export default function page() {
   return (
     <div>
-        <title>Page Title. Maximum length 60-70 characters</title>
-        <meta name='description' content='Page description. No longer than 155 characters' />
-        <meta name='keywords' content='XX' />
-        <meta name='geo.region' content='ISO 3166-2:GB' />
-        <meta name='robots' content='noindex' />
-        <meta itemProp='name' content='The Name or Title Here' />
-        <meta itemProp='description' content='This is the page description' />
-        {
-          //image
-        }
-        <meta itemProp='image' content='http://www.example.com/image.jpg' />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@publisher_handle' />
-        <meta name='twitter:title' content='Page Title' />
-        <meta name='twitter:description' content='Page description less than 200 characters' />
-        <meta name='twitter:creator' content='@author_handle' />
-        {
-          //image
-        }
-        <meta name='twitter:image:src' content='http://www.example.com/image.jpg' />
-        <meta property='og:title' content='Title Here' />
-        <meta property='og:type' content='article' />
-        <meta property='og:url' content='http://www.example.com/' />
-        {
-          //image
-        }
-        <meta property='og:image' content='http://example.com/image.jpg' />
-        <meta property='og:description' content='Description Here' />
-        <meta property='og:site_name' content='Site Name, i.e. Moz' />
+      <title>Page Title. Maximum length 60-70 characters</title>
+      <meta
+        name="description"
+        content="Page description. No longer than 155 characters"
+      />
+      <meta name="keywords" content="XX" />
+      <meta name="geo.region" content="ISO 3166-2:GB" />
+      <meta name="robots" content="noindex" />
+      <meta itemProp="name" content="The Name or Title Here" />
+      <meta itemProp="description" content="This is the page description" />
+      {
+        //image
+      }
+      <meta itemProp="image" content="http://www.example.com/image.jpg" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@publisher_handle" />
+      <meta name="twitter:title" content="Page Title" />
+      <meta
+        name="twitter:description"
+        content="Page description less than 200 characters"
+      />
+      <meta name="twitter:creator" content="@author_handle" />
+      {
+        //image
+      }
+      <meta
+        name="twitter:image:src"
+        content="http://www.example.com/image.jpg"
+      />
+      <meta property="og:title" content="Title Here" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="http://www.example.com/" />
+      {
+        //image
+      }
+      <meta property="og:image" content="http://example.com/image.jpg" />
+      <meta property="og:description" content="Description Here" />
+      <meta property="og:site_name" content="Site Name, i.e. Moz" />
 
-        {
-          //time
-        }
-        <meta property='article:published_time' content='2013-09-17T05:59:00+01:00' />
-        <meta property='article:modified_time' content='2013-09-16T19:08:47+01:00' />
+      {
+        //time
+      }
+      <meta
+        property="article:published_time"
+        content="2013-09-17T05:59:00+01:00"
+      />
+      <meta
+        property="article:modified_time"
+        content="2013-09-16T19:08:47+01:00"
+      />
 
-        <meta property='article:section' content='Article Section' />
-        <meta property='article:tag' content='Article Tag' />
-        <meta property='fb:admins' content='Facebook numberic ID' />
+      <meta property="article:section" content="Article Section" />
+      <meta property="article:tag" content="Article Tag" />
+      <meta property="fb:admins" content="Facebook numberic ID" />
 
-
-
-        <video width="400" controls>
-          <source src="https://prismic-io.s3.amazonaws.com/intouchnetworks-marketing-site%2F1c01b3d7-27b7-46e1-b2a8-5867f3b85588_in+touch.mp4" type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
+      <video width="400" controls>
+        <source
+          src="https://prismic-io.s3.amazonaws.com/intouchnetworks-marketing-site%2F1c01b3d7-27b7-46e1-b2a8-5867f3b85588_in+touch.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support HTML5 video.
+      </video>
     </div>
-
-  )
+  );
 }
 
-// 
-// 
+//
+//
 // // // THIS IS HOW IT LOOKS LIKE WHEN WE GET DATA FROM PRISMIC
-// 
-// 
-
+//
+//
 
 // {
 //   "seo_title": {
@@ -258,91 +272,185 @@ export default function page() {
 //   }
 // }
 
-
-// 
-// 
+//
+//
 // // // SEO HELPER
-// 
-// 
+//
+//
 
 import {
   TextHelper,
   SmallTextHelper,
-  UrlHelper,
+  UrlHelper
   //ArrayHelper,
   //NumberHelper
-} from './PrismicHelpers';
+} from "./PrismicHelpers";
 
 //SEO HELPER
-export const SEOhelper = (response) => {
+export const SEOhelper = response => {
   const seoData = response;
 
   let seoObject = {
-      title: TextHelper(seoData.seo_title),
-      description: TextHelper(seoData.seo_description),
-      keywords: TextHelper(seoData.seo_keywords),
-      geo_region: TextHelper(seoData.seo_geo_region),
-      robots: TextHelper(seoData.seo_robots),
-      item_prop_name: TextHelper(seoData.seo_item_prop_name),
-      item_prop_description: TextHelper(seoData.seo_item_prop_description),
-      twitter_card: TextHelper(seoData.seo_twitter_card),
-      twitter_site: TextHelper(seoData.seo_twitter_site),
-      twitter_title: TextHelper(seoData.seo_twitter_title),
-      twitter_description: TextHelper(seoData.seo_twitter_description),
-      twitter_creator: TextHelper(seoData.seo_twitter_creator),
-      og_title: TextHelper(seoData.seo_og_title),
-      og_type: TextHelper(seoData.seo_og_type),
-      og_url: TextHelper(seoData.seo_og_url),
-      og_description: TextHelper(seoData.seo_og_description),
-      og_site_name: TextHelper(seoData.seo_og_site_name),
-      article_section: TextHelper(seoData.seo_article_section),
-      article_tag: TextHelper(seoData.seo_article_tag),
-      fb_admins: TextHelper(seoData.seo_fb_admins),
-      item_prop_image: UrlHelper(seoData.seo_item_prop_image),
-      twitter_image: UrlHelper(seoData.seo_twitter_image),
-      og_image: UrlHelper(seoData.seo_og_image),
-      article_published_time: SmallTextHelper(seoData.seo_article_published_time),
-      article_modified_time: SmallTextHelper(seoData.seo_article_modified_time),
-  }
+    title: TextHelper(seoData.seo_title),
+    description: TextHelper(seoData.seo_description),
+    keywords: TextHelper(seoData.seo_keywords),
+    geo_region: TextHelper(seoData.seo_geo_region),
+    robots: TextHelper(seoData.seo_robots),
+    item_prop_name: TextHelper(seoData.seo_item_prop_name),
+    item_prop_description: TextHelper(seoData.seo_item_prop_description),
+    twitter_card: TextHelper(seoData.seo_twitter_card),
+    twitter_site: TextHelper(seoData.seo_twitter_site),
+    twitter_title: TextHelper(seoData.seo_twitter_title),
+    twitter_description: TextHelper(seoData.seo_twitter_description),
+    twitter_creator: TextHelper(seoData.seo_twitter_creator),
+    og_title: TextHelper(seoData.seo_og_title),
+    og_type: TextHelper(seoData.seo_og_type),
+    og_url: TextHelper(seoData.seo_og_url),
+    og_description: TextHelper(seoData.seo_og_description),
+    og_site_name: TextHelper(seoData.seo_og_site_name),
+    article_section: TextHelper(seoData.seo_article_section),
+    article_tag: TextHelper(seoData.seo_article_tag),
+    fb_admins: TextHelper(seoData.seo_fb_admins),
+    item_prop_image: UrlHelper(seoData.seo_item_prop_image),
+    twitter_image: UrlHelper(seoData.seo_twitter_image),
+    og_image: UrlHelper(seoData.seo_og_image),
+    article_published_time: SmallTextHelper(seoData.seo_article_published_time),
+    article_modified_time: SmallTextHelper(seoData.seo_article_modified_time)
+  };
 
-  return seoObject
+  return seoObject;
+};
+
+//
+//
+// // // VALIDATION WHAT TO DISPLAY
+//
+//
+
+{
+  title && title.length > 0 && <title>{title}</title>;
+}
+{
+  description && description.length > 0 && (
+    <meta name="description" content={description} />
+  );
+}
+{
+  keywords && keywords.length > 0 && (
+    <meta name="keywords" content={keywords} />
+  );
+}
+{
+  geo_region && geo_region.length > 0 ? (
+    <meta name="geo.region" content={geo_region} />
+  ) : (
+    <meta name="geo.region" content="ISO:3166-2:GB" />
+  );
+}
+{
+  robots && robots.length > 0 && <meta name="robots" content={robots} />;
 }
 
+{
+  item_prop_name && item_prop_name.length > 0 && (
+    <meta itemProp="name" content={item_prop_name} />
+  );
+}
+{
+  item_prop_description && item_prop_description.length > 0 && (
+    <meta itemProp="description" content={item_prop_description} />
+  );
+}
 
-// 
-// 
-// // // VALIDATION WHAT TO DISPLAY
-// 
-// 
+{
+  twitter_card && twitter_card.length > 0 && (
+    <meta name="twitter:card" content={twitter_card} />
+  );
+}
+{
+  twitter_site && twitter_site.length > 0 && (
+    <meta name="twitter:site" content={twitter_site} />
+  );
+}
+{
+  twitter_title && twitter_title.length > 0 && (
+    <meta name="twitter:title" content={twitter_title} />
+  );
+}
+{
+  twitter_description && twitter_description.length > 0 && (
+    <meta name="twitter:description" content={twitter_description} />
+  );
+}
+{
+  twitter_creator && twitter_creator.length > 0 && (
+    <meta name="twitter:creator" content={twitter_creator} />
+  );
+}
 
-{title && title.length > 0 && <title>{title}</title>}
-{description && description.length > 0 &&  <meta name='description' content={description} />}
-{keywords && keywords.length > 0 &&  <meta name='keywords' content={keywords} />}
-{geo_region && geo_region.length > 0 ? <meta name='geo.region' content={geo_region} /> : <meta name='geo.region' content="ISO:3166-2:GB" />}
-{robots && robots.length > 0 &&  <meta name='robots' content={robots} />}
+{
+  og_type && og_type.length > 0 && (
+    <meta property="og:type" content={og_type} />
+  );
+}
+{
+  og_title && og_title.length > 0 && (
+    <meta property="og:title" content={og_title} />
+  );
+}
+{
+  og_url && og_url.length > 0 && <meta property="og:url" content={og_url} />;
+}
+{
+  og_description && og_description.length > 0 && (
+    <meta property="og:description" content={og_description} />
+  );
+}
+{
+  og_site_name && og_site_name.length > 0 && (
+    <meta property="og:site_name" content={og_site_name} />
+  );
+}
 
-{item_prop_name && item_prop_name.length > 0 &&  <meta itemProp='name' content={item_prop_name} />}
-{item_prop_description && item_prop_description.length > 0 &&  <meta itemProp='description' content={item_prop_description} />}
+{
+  article_published_time && article_published_time.length > 0 && (
+    <meta property="article:published_time" content={article_published_time} />
+  );
+}
+{
+  article_modified_time && article_modified_time.length > 0 && (
+    <meta property="article:modified_time" content={article_modified_time} />
+  );
+}
+{
+  article_section && article_section.length > 0 && (
+    <meta property="article:section" content={article_section} />
+  );
+}
+{
+  article_tag && article_tag.length > 0 && (
+    <meta property="article:tag" content={article_tag} />
+  );
+}
 
-{twitter_card && twitter_card.length > 0 &&  <meta name='twitter:card' content={twitter_card} />}
-{twitter_site && twitter_site.length > 0 &&  <meta name='twitter:site' content={twitter_site} />}
-{twitter_title && twitter_title.length > 0 &&  <meta name='twitter:title' content={twitter_title} />}
-{twitter_description && twitter_description.length > 0 &&  <meta name='twitter:description' content={twitter_description} />}
-{twitter_creator && twitter_creator.length > 0 &&  <meta name='twitter:creator' content={twitter_creator} />}
+{
+  fb_admins && fb_admins.length > 0 && (
+    <meta property="fb:admins" content={fb_admins} />
+  );
+}
 
-{og_type && og_type.length > 0 &&  <meta property='og:type' content={og_type} />}
-{og_title && og_title.length > 0 &&  <meta property='og:title' content={og_title} />}
-{og_url && og_url.length > 0 &&  <meta property='og:url' content={og_url} />}
-{og_description && og_description.length > 0 &&  <meta property='og:description' content={og_description} />}
-{og_site_name && og_site_name.length > 0 &&  <meta property='og:site_name' content={og_site_name} />}
-
-{article_published_time && article_published_time.length > 0 &&  <meta property='article:published_time' content={article_published_time} />}
-{article_modified_time && article_modified_time.length > 0 &&  <meta property='article:modified_time' content={article_modified_time} />}
-{article_section && article_section.length > 0 &&  <meta property='article:section' content={article_section} />}
-{article_tag && article_tag.length > 0 &&  <meta property='article:tag' content={article_tag} />}
-
-{fb_admins && fb_admins.length > 0 &&  <meta property='fb:admins' content={fb_admins} />}
-
-{item_prop_image && item_prop_image.length > 0 &&  <meta itemProp='image' content={item_prop_image} />}
-{twitter_image && twitter_image.length > 0 &&  <meta name='twitter:image:src' content={twitter_image} />}
-{og_image && og_image.length > 0 &&  <meta property='og:image' content={og_image} />}
+{
+  item_prop_image && item_prop_image.length > 0 && (
+    <meta itemProp="image" content={item_prop_image} />
+  );
+}
+{
+  twitter_image && twitter_image.length > 0 && (
+    <meta name="twitter:image:src" content={twitter_image} />
+  );
+}
+{
+  og_image && og_image.length > 0 && (
+    <meta property="og:image" content={og_image} />
+  );
+}

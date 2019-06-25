@@ -1,57 +1,56 @@
-// 1. Resources
-@import
-'01_main/mq',
-'01_main/colors',
-'01_main/borders',
-'01_main/zindex',
-'01_main/shadows',
-'01_main/mixins/mixin-header',
-'01_main/mixins/mixin-hover',
-'01_main/fonts',
-'01_main/base';
-// // 2. External Tools
-@import
-'02_external/prism';
-
-
-// // 3. Elements
-@import
-'03_elements/buttons';
-
-// // 4. Components
-@import
-//Layouts - navbar - footer
-'04_components/layouts/slices-layout',
-'04_components/layouts/articles-layout',
-'04_components/layouts/navbar',
-'04_components/layouts/footer',
-
-//Slices
-'04_components/slices/hero',
-'04_components/slices/author-article-slice',
-'04_components/slices/slice-text-box',
-'04_components/slices/single-media-slice',
-'04_components/slices/multiple-media-slice',
-'04_components/slices/code-slice',
-
-//Blog sidebar picked articles
-'04_components/blog-sidebar/blog-sidebar-picked-articles',
-
-//Author
-'04_components/author/author-small-component',
-
-//Tags
-'04_components/tags/tags',
-
-//Subscribe
-'04_components/subscribe/subscribe',
-
-//nprogress
-'04_components/nprogress/nprogress',
-
-//Pagination
-'04_components/pagination/paginations';
-
-// // // 5. Pages
+// // 1. Resources
 // @import
-// '05_pages/something';
+// '01_main/mq',
+// '01_main/colors',
+// '01_main/borders',
+// '01_main/zindex',
+// '01_main/shadows',
+// '01_main/mixins/mixin-header',
+// '01_main/mixins/mixin-hover',
+// '01_main/fonts',
+// '01_main/base';
+// // // 2. External Tools
+// @import
+// '02_external/prism';
+
+// // // 3. Elements
+// @import
+// '03_elements/buttons';
+
+// // // 4. Components
+// @import
+// //Layouts - navbar - footer
+// '04_components/layouts/slices-layout',
+// '04_components/layouts/articles-layout',
+// '04_components/layouts/navbar',
+// '04_components/layouts/footer',
+
+// //Slices
+// '04_components/slices/hero',
+// '04_components/slices/author-article-slice',
+// '04_components/slices/slice-text-box',
+// '04_components/slices/single-media-slice',
+// '04_components/slices/multiple-media-slice',
+// '04_components/slices/code-slice',
+
+// //Blog sidebar picked articles
+// '04_components/blog-sidebar/blog-sidebar-picked-articles',
+
+// //Author
+// '04_components/author/author-small-component',
+
+// //Tags
+// '04_components/tags/tags',
+
+// //Subscribe
+// '04_components/subscribe/subscribe',
+
+// //nprogress
+// '04_components/nprogress/nprogress',
+
+// //Pagination
+// '04_components/pagination/paginations';
+
+// // // // 5. Pages
+// // @import
+// // '05_pages/something';

@@ -1,4 +1,4 @@
-const routes = require('next-routes')
+const routes = require("next-routes");
 
 //                                                     // Name   Page      Pattern
 // module.exports = routes()                           // ----   ----      -----
@@ -9,7 +9,5 @@ const routes = require('next-routes')
 // .add({name: 'beta', pattern: '/v3', page: 'v3'})    // beta   v3        /v3
 
 module.exports = routes()
-
-//  ---------- Homepage
-.add('index', '/')
-.add('random-page/SecondPage', '/second')
+  //  ---------- Homepage
+  .add("index", "/");
